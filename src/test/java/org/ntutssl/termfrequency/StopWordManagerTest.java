@@ -27,7 +27,7 @@ public class StopWordManagerTest{
     @Test
     public void test_single_character_should_be_a_stop_word() {
         StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
-        for (char c = 'A'; c <= 'z'; c++) {
+        for (char c = 33; c <= 126; c++) {
             assertTrue(stopWordManager.isStopWordSet(Character.toString(c)));
         }
         

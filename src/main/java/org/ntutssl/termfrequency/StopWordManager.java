@@ -24,7 +24,7 @@ public class StopWordManager {
             System.out.println("File is not exist!");
         }
         
-        for (char c = 'A' ; c <= 'z'; c++) {
+        for (char c = 33 ; c <= 126; c++) {
             this.stopWordSet.add(Character.toString(c));
         }
         System.out.println(stopWordSet);
