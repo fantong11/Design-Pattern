@@ -31,7 +31,9 @@ public class WordFrequencyManager{
         return this.words.get(word) != null ? this.words.get(word) : 0;
     }
 
-    // public Map<String, Integer> getWordFrequencyDescending(){ }
+    public Map<String, Integer> getWordFrequencyDescending(){
+        return this.words;
+    }
 
     // public Map<String, Integer> getWordFrequencyAscending(){ }
 }

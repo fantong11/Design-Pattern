@@ -13,5 +13,15 @@ public class WordFrequencyController {
         DataStorageManager dataStorageManager = new DataStorageManager(textFile);
         StopWordManager stopWordManager = new StopWordManager(stopWordFile);
         WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
+
+        for (String word : dataStorageManager.getWords()) {
+            if (!stopWordManager.isStopWordSet(word)) {
+                wordFrequencyManager.incrementCount(word);
+            }
+        }
+
+        // for (Map.Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyDescending().entrySet()) {
+        //     System.out.println(entry);
+        // }
     }
 }
