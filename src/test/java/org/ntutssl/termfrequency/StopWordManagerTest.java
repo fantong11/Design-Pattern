@@ -13,7 +13,7 @@ public class StopWordManagerTest{
     }
     
     @Test
-    public void testIsFirstStopWord() {
+    public void test_single_character_should_be_a_stop_word() {
         StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
         assertTrue(stopWordManager.isStopWordSet("a"));
     }
