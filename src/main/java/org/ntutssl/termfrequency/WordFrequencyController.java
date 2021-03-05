@@ -20,8 +20,22 @@ public class WordFrequencyController {
             }
         }
 
-        // for (Map.Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyDescending().entrySet()) {
-        //     System.out.println(entry);
-        // }
+        int count = 0;
+        if (order.equals("des"))  {
+            
+            for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyDescending().entrySet()) {
+                if (count >= Integer.parseInt(range)) break;
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+                count++;
+            }
+        } else if (order.equals("asc")) {
+
+            for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyAscending().entrySet()) {
+                if (count >= Integer.parseInt(range)) break;
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+                count++;
+            }
+        }
+        
     }
 }

@@ -23,6 +23,11 @@ public class StopWordManager {
         } catch (FileNotFoundException ex) {
             System.out.println("File is not exist!");
         }
+        
+        for (char c = 'A' ; c <= 'z'; c++) {
+            this.stopWordSet.add(Character.toString(c));
+        }
+        System.out.println(stopWordSet);
     }
 
     public boolean isStopWordList(String word){
