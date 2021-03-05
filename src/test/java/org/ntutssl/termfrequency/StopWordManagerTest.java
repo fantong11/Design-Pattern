@@ -13,7 +13,7 @@ public class StopWordManagerTest{
     }
     
     @Test
-    public void test_single_character_should_be_a_stop_word() {
+    public void testIsFirstStopWord() {
         StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
         assertTrue(stopWordManager.isStopWordSet("a"));
     }
@@ -22,5 +22,14 @@ public class StopWordManagerTest{
     public void testIsLastStopWord() {
         StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
         assertTrue(stopWordManager.isStopWordSet("your"));
+    }
+
+    @Test
+    public void test_single_character_should_be_a_stop_word() {
+        StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
+        for (char c = 'A'; c <= 'z'; c++) {
+            assertTrue(stopWordManager.isStopWordSet(Character.toString(c)));
+        }
+        
     }
 }
