@@ -13,7 +13,27 @@ public class StopWordManager {
     private Set<String> stopWordSet;
 
     public StopWordManager(String filePath) {
+        storeStopWordList(filePath);
+        storeStopWordSet(filePath);
+    }
+
+    public void storeStopWordList(String filePath) {
         this.stopWordList = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(filePath))) {
+            scanner.useDelimiter(",");
+            while (scanner.hasNext()) {
+                this.stopWordList.add(scanner.next());
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("File is not exist!");
+        }
+        
+        for (char c = 33 ; c <= 126; c++) {
+            this.stopWordList.add(Character.toString(c));
+        }
+    }
+
+    public void storeStopWordSet(String filePath) {
         this.stopWordSet = new HashSet<>();
         try (Scanner scanner = new Scanner(new File(filePath))) {
             scanner.useDelimiter(",");
@@ -27,7 +47,6 @@ public class StopWordManager {
         for (char c = 33 ; c <= 126; c++) {
             this.stopWordSet.add(Character.toString(c));
         }
-        System.out.println(stopWordSet);
     }
 
     public boolean isStopWordList(String word){
