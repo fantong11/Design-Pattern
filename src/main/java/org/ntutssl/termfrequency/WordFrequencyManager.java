@@ -38,7 +38,7 @@ public class WordFrequencyManager {
 
         Collections.sort(list, new Comparator<Entry<String, Integer>>() {
             public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                return (o1.getValue()).compareTo(o2.getValue());
+                return (o2.getValue()).compareTo(o1.getValue());
             }
         });
 
@@ -54,7 +54,7 @@ public class WordFrequencyManager {
 
         Collections.sort(list, new Comparator<Entry<String, Integer>>() {
             public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                return (o2.getValue()).compareTo(o1.getValue());
+                return (o1.getValue()).compareTo(o2.getValue());
             }
         });
 
