@@ -13,7 +13,7 @@ public class StopWordManager {
     private Set<String> stopWordSet;
 
     public StopWordManager(String filePath) {
-        // storeStopWordList(filePath);
+        storeStopWordList(filePath);
         storeStopWordSet(filePath);
     }
 

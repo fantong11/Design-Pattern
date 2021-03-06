@@ -1,6 +1,5 @@
 package org.ntutssl.termfrequency;
 
-import java.util.Map;
 import java.util.Map.Entry;
 
 public class WordFrequencyController {
@@ -28,7 +27,7 @@ public class WordFrequencyController {
             for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyDescending().entrySet()) {
                 if (count >= Integer.parseInt(range))
                     break;
-                System.out.println(entry.getKey() + " - " + entry.getValue());
+                System.out.println(entry.getKey() + ": " + entry.getValue());
                 count++;
             }
         } else if (order.equals("asc")) {
