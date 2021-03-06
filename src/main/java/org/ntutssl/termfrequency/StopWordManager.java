@@ -11,10 +11,9 @@ import java.util.HashSet;
 public class StopWordManager {
     private List<String> stopWordList;
     private Set<String> stopWordSet;
-
-    public StopWordManager(String filePath, String dataStructureType) {
-        if (dataStructureType.equals("List")) storeStopWordList(filePath);
-        else if (dataStructureType.equals("Set")) storeStopWordSet(filePath);
+    public StopWordManager(String filePath) {
+        storeStopWordList(filePath);
+        storeStopWordSet(filePath);
     }
 
     public void storeStopWordList(String filePath) {

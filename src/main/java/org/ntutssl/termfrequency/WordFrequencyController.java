@@ -11,12 +11,12 @@ public class WordFrequencyController {
         String order = args[3];
 
         DataStorageManager dataStorageManager = new DataStorageManager(textFile);
-        StopWordManager stopWordManager = new StopWordManager(stopWordFile, "List");
+        StopWordManager stopWordManager = new StopWordManager(stopWordFile);
         WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
 
         // 把字加進wfm
         for (String word : dataStorageManager.getWords()) {
-            if (!stopWordManager.isStopWordList(word)) {
+            if (!stopWordManager.isStopWordSet(word)) {
                 wordFrequencyManager.incrementCount(word);
             }
         }
