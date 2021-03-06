@@ -9,33 +9,37 @@ public class WordFrequencyController {
         String textFile = args[1];
         String range = args[2];
         String order = args[3];
-        
+
         DataStorageManager dataStorageManager = new DataStorageManager(textFile);
-        StopWordManager stopWordManager = new StopWordManager(stopWordFile);
+        StopWordManager stopWordManager = new StopWordManager(stopWordFile, "List");
         WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
 
+        // 把字加進wfm
         for (String word : dataStorageManager.getWords()) {
-            if (!stopWordManager.isStopWordSet(word)) {
+            if (!stopWordManager.isStopWordList(word)) {
                 wordFrequencyManager.incrementCount(word);
             }
         }
 
+        // 範圍
         int count = 0;
-        if (order.equals("des"))  {
-            
+        if (order.equals("des")) {
+
             for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyDescending().entrySet()) {
-                if (count >= Integer.parseInt(range)) break;
+                if (count >= Integer.parseInt(range))
+                    break;
                 System.out.println(entry.getKey() + " - " + entry.getValue());
                 count++;
             }
         } else if (order.equals("asc")) {
 
             for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyAscending().entrySet()) {
-                if (count >= Integer.parseInt(range)) break;
+                if (count >= Integer.parseInt(range))
+                    break;
                 System.out.println(entry.getKey() + ": " + entry.getValue());
                 count++;
             }
         }
-        
+
     }
 }

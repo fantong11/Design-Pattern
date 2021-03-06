@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class WordFrequencyManagerTest{
+public class WordFrequencyManagerTest {
     @Test
     public void testWordsWork() {
         WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
@@ -22,6 +22,6 @@ public class WordFrequencyManagerTest{
         wordFrequencyManager.incrementCount("cat");
         wordFrequencyManager.incrementCount("dog");
         assertEquals(3, wordFrequencyManager.getNumOfWords());
-        
+
     }
 }

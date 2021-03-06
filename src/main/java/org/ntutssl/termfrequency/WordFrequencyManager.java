@@ -34,6 +34,7 @@ public class WordFrequencyManager {
     }
 
     public Map<String, Integer> getWordFrequencyDescending() {
+        // Map轉成LinkedList
         List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(this.words.entrySet());
 
         Collections.sort(list, new Comparator<Entry<String, Integer>>() {
@@ -49,7 +50,7 @@ public class WordFrequencyManager {
         return temp;
     }
 
-    public Map<String, Integer> getWordFrequencyAscending(){
+    public Map<String, Integer> getWordFrequencyAscending() {
         List<Entry<String, Integer>> list = new LinkedList<Entry<String, Integer>>(this.words.entrySet());
 
         Collections.sort(list, new Comparator<Entry<String, Integer>>() {

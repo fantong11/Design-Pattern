@@ -21,7 +21,7 @@ public class DataStorageManager {
         }
     }
 
-    public List<String> getWords(){
+    public List<String> getWords() {
         return this.words;
     }
 }

@@ -12,9 +12,9 @@ public class StopWordManager {
     private List<String> stopWordList;
     private Set<String> stopWordSet;
 
-    public StopWordManager(String filePath) {
-        storeStopWordList(filePath);
-        storeStopWordSet(filePath);
+    public StopWordManager(String filePath, String dataStructureType) {
+        if (dataStructureType.equals("List")) storeStopWordList(filePath);
+        else if (dataStructureType.equals("Set")) storeStopWordSet(filePath);
     }
 
     public void storeStopWordList(String filePath) {
@@ -27,8 +27,9 @@ public class StopWordManager {
         } catch (FileNotFoundException ex) {
             System.out.println("File is not exist!");
         }
-        
-        for (char c = 33 ; c <= 126; c++) {
+
+        // 把其他單獨字元都加進stopWordList
+        for (char c = 33; c <= 126; c++) {
             this.stopWordList.add(Character.toString(c));
         }
     }
@@ -43,17 +44,18 @@ public class StopWordManager {
         } catch (FileNotFoundException ex) {
             System.out.println("File is not exist!");
         }
-        
-        for (char c = 33 ; c <= 126; c++) {
+
+        // 把其他單獨字元都加進stopWordSet
+        for (char c = 33; c <= 126; c++) {
             this.stopWordSet.add(Character.toString(c));
         }
     }
 
-    public boolean isStopWordList(String word){
+    public boolean isStopWordList(String word) {
         return this.stopWordList.contains(word);
     }
 
-    public boolean isStopWordSet(String word){
+    public boolean isStopWordSet(String word) {
         return this.stopWordSet.contains(word);
     }
 }
