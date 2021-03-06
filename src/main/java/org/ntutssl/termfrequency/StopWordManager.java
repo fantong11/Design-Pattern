@@ -11,9 +11,9 @@ import java.util.HashSet;
 public class StopWordManager {
     private List<String> stopWordList;
     private Set<String> stopWordSet;
-    
+
     public StopWordManager(String filePath) {
-        storeStopWordList(filePath);
+        // storeStopWordList(filePath);
         storeStopWordSet(filePath);
     }
 
