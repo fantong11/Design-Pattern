@@ -32,7 +32,7 @@ public class WordFrequencyController {
 
             for (Entry<String, Integer> entry : wordFrequencyManager.getWordFrequencyAscending().entrySet()) {
                 if (count >= Integer.parseInt(range)) break;
-                System.out.println(entry.getKey() + " - " + entry.getValue());
+                System.out.println(entry.getKey() + ": " + entry.getValue());
                 count++;
             }
         }

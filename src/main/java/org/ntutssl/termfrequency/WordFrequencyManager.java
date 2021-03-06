@@ -26,7 +26,7 @@ public class WordFrequencyManager {
     }
 
     public int getNumOfWords() {
-        return words.size();
+        return this.words.size();
     }
 
     public Integer getCount(String word) {
