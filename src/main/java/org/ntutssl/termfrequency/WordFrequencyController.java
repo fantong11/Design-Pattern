@@ -20,6 +20,10 @@ public class WordFrequencyController {
             }
         }
 
+        if (wordFrequencyManager.getNumOfWords() < Integer.parseInt(range)) {
+            return;    
+        }
+
         // 範圍
         int count = 0;
         if (order.equals("des")) {

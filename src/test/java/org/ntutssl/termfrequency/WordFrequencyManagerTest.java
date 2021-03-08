@@ -27,38 +27,38 @@ public class WordFrequencyManagerTest {
 
     }
 
-    // @Test
-    // public void testWordFreqDes() {
-    //     DataStorageManager dataStorageManager = new DataStorageManager("input/pride-and-prejudice.txt");
-    //     StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt", "List");
-    //     WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
+    @Test
+    public void testWordFreqDes() {
+        DataStorageManager dataStorageManager = new DataStorageManager("input/pride-and-prejudice.txt");
+        StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
+        WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
 
-    //     // 把字加進wfm
-    //     for (String word : dataStorageManager.getWords()) {
-    //         if (!stopWordManager.isStopWordList(word)) {
-    //             wordFrequencyManager.incrementCount(word);
-    //         }
-    //     }
+        // 把字加進wfm
+        for (String word : dataStorageManager.getWords()) {
+            if (!stopWordManager.isStopWordList(word)) {
+                wordFrequencyManager.incrementCount(word);
+            }
+        }
 
-    //     assertEquals(Integer.valueOf(786), wordFrequencyManager.getWordFrequencyDescending().get("mr"));
-    //     assertEquals(Integer.valueOf(635), wordFrequencyManager.getWordFrequencyDescending().get("elizabeth"));
-    // }
+        assertEquals(Integer.valueOf(786), wordFrequencyManager.getWordFrequencyDescending().get("mr"));
+        assertEquals(Integer.valueOf(635), wordFrequencyManager.getWordFrequencyDescending().get("elizabeth"));
+    }
 
-    // @Test
-    // public void testWordFreqAsc() {
-    //     DataStorageManager dataStorageManager = new DataStorageManager("input/pride-and-prejudice.txt");
-    //     StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt", "List");
-    //     WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
+    @Test
+    public void testWordFreqAsc() {
+        DataStorageManager dataStorageManager = new DataStorageManager("input/pride-and-prejudice.txt");
+        StopWordManager stopWordManager = new StopWordManager("input/stop_words.txt");
+        WordFrequencyManager wordFrequencyManager = new WordFrequencyManager();
 
-    //     // 把字加進wfm
-    //     for (String word : dataStorageManager.getWords()) {
-    //         if (!stopWordManager.isStopWordList(word)) {
-    //             wordFrequencyManager.incrementCount(word);
-    //         }
-    //     }
+        // 把字加進wfm
+        for (String word : dataStorageManager.getWords()) {
+            if (!stopWordManager.isStopWordList(word)) {
+                wordFrequencyManager.incrementCount(word);
+            }
+        }
 
-    //     assertEquals(Integer.valueOf(1), wordFrequencyManager.getWordFrequencyDescending().get("nicely"));
-    //     assertEquals(Integer.valueOf(1), wordFrequencyManager.getWordFrequencyDescending().get("costing"));
-    // }
+        assertEquals(Integer.valueOf(1), wordFrequencyManager.getWordFrequencyDescending().get("nicely"));
+        assertEquals(Integer.valueOf(1), wordFrequencyManager.getWordFrequencyDescending().get("costing"));
+    }
 
 }
