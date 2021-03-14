@@ -27,8 +27,4 @@ public class StopWordManager implements IStopWordManager {
     public boolean isStopWordSet(String word) {
         return this.stopWordSet.contains(word);
     }
-
-    public List<String> getList() {
-        return stopWordList;
-    }
 }

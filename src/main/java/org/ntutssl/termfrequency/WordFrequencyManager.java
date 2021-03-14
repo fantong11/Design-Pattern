@@ -41,6 +41,7 @@ public class WordFrequencyManager implements IWordFrequencyManager {
         List<Entry<String, Integer>> list = new LinkedList<>(this.words.entrySet());
         List<String> wordList = new LinkedList<>();
 
+        // collection sort
         if (order.equals(SortOrder.DESCENDING)) {
             Collections.sort(list, new Comparator<Entry<String, Integer>>() {
                 @Override
@@ -64,21 +65,24 @@ public class WordFrequencyManager implements IWordFrequencyManager {
         return wordList;
     }
 
-    @Override
-    public void output(String outputPath, String order, int range, IOHandler handler) {
-        if (words.size() == 0) throw new WordFrequencyException("Word not found.");
-        if (range > words.size() || range < 1)
-            throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", words.size()));
+    // @Override
+    // public void output(String outputPath, String order, int range, IOHandler handler) {
+    //     // 檔案裡沒有字
+    //     if (words.size() == 0) throw new WordFrequencyException("Word not found.");
+    //     // 範圍超過上限或低於下限
+    //     if (range > words.size() || range < 1)
+    //         throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", words.size()));
 
-        switch (order) {
-        case "des":
-            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
-            break;
-        case "asc":
-            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.ASCENDING));
-            break;
-        default:
-            throw new WordFrequencyException("The order should be \"asc\" or \"des\".");
-        }
-    }
+    //     // 判斷遞增遞減
+    //     switch (order) {
+    //     case "des":
+    //         handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
+    //         break;
+    //     case "asc":
+    //         handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.ASCENDING));
+    //         break;
+    //     default:
+    //         throw new WordFrequencyException("The order should be \"asc\" or \"des\".");
+    //     }
+    // }
 }

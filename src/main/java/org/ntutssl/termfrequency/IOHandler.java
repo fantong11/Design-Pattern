@@ -15,7 +15,8 @@ public class IOHandler {
     private List<String> wordList;
     private Set<String> wordSet;
 
-    public IOHandler() {}
+    public IOHandler() {
+    }
 
     public List<String> handleInputAsList(String filePath, String pattern) {
         this.wordList = new ArrayList<>();
@@ -47,7 +48,8 @@ public class IOHandler {
         File file = new File(outputPath);
         try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
             for (int i = 0; i < data.size(); i++) {
-                if (i >= range) break;
+                if (i >= range)
+                    break;
                 br.write(data.get(i));
             }
         } catch (IOException ex) {

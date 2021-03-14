@@ -21,7 +21,6 @@ public class WordFrequencyController {
                 this.wfm.incrementCount(word);
             }
         }
-        // System.out.println(dsm.getWords().size());
         
         this.wfm.output(outputPath, order, range, handler);
 

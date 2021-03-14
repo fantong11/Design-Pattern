@@ -2,10 +2,8 @@ package org.ntutssl.termfrequency;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
 
 import javax.swing.SortOrder;
 
@@ -34,6 +32,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("test1");
         wfm.incrementCount("test2");
         wfm.incrementCount("test3");
+        
         assertEquals(3, wfm.getNumOfWords());
     }
 
@@ -49,6 +48,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("test3");
         wfm.incrementCount("test2");
         wfm.incrementCount("test3");
+
         assertEquals(3, wfm.getNumOfWords());
     }
 
@@ -63,6 +63,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("bear");
         wfm.incrementCount("bear");
         wfm.incrementCount("dog");
+        
         assertEquals(wordList, wfm.getWordFrequency(SortOrder.ASCENDING));
     }
 
@@ -78,10 +79,6 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("bear");
         wfm.incrementCount("dog");
         
-        // for (Entry<String, Integer> word : wfm.getWords().entrySet()) {
-        //     System.out.println(word.getKey() + " " + word.getValue());
-        // }
-
         assertEquals(wordList, wfm.getWordFrequency(SortOrder.DESCENDING));
     }
 }
