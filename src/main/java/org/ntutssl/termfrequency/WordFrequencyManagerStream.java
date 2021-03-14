@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -41,54 +42,36 @@ public class WordFrequencyManagerStream implements IWordFrequencyManager {
     @Override
     public List<String> getWordFrequency(SortOrder order) {
         List<Entry<String, Integer>> list = new LinkedList<>(this.words.entrySet());
+        Map<String, Integer> sortWords = new LinkedHashMap<>();
         List<String> wordList = new LinkedList<>();
+        // Map<String, Integer> sortMap = words.entrySet().stream()
+        // .sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(
+        // Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue,
+        // LinkedHashMap::new));
 
         if (order.equals(SortOrder.DESCENDING)) {
-            list.stream().sorted(new Comparator<Entry<String, Integer>>() {
-                @Override
-                public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                    return (o2.getValue()).compareTo(o1.getValue());
-                }
-            }).collect(Collectors.toList());
-            // words.entrySet().stream().sorted(Entry.<String, Integer>comparingByValue().reversed());
+            words.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                    .forEachOrdered(x -> sortWords.put(x.getKey(), x.getValue()));
         } else if (order.equals(SortOrder.ASCENDING)) {
-            list.stream().sorted(new Comparator<Entry<String, Integer>>() {
-                @Override
-                public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                    return (o1.getValue().compareTo(o2.getValue()));
-                }
-            }).collect(Collectors.toList());
+            words.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue())
+                    .forEachOrdered(x -> sortWords.put(x.getKey(), x.getValue()));
         }
 
-        for (Entry<String, Integer> word : words.entrySet()) {
+        for (Entry<String, Integer> word : sortWords.entrySet()) {
             wordList.add(word.getKey() + ": " + word.getValue() + "\n");
         }
 
         return wordList;
     }
-    // @Override
-    // public List<String> getWordFrequency(SortOrder order) {
-    //     List<String> sortedList = new ArrayList<>();
-    //     List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(words.entrySet());
-    //     if (order.equals(SortOrder.DESCENDING)) {
-    //         list.stream().sorted((o1, o2)->o2.getValue().compareTo(o1.getValue())).collect(Collectors.toList());
-    //     } else if (order.equals(SortOrder.ASCENDING)) {
-    //         list.stream().sorted((o1, o2)->o1.getValue().compareTo(o2.getValue())).collect(Collectors.toList());
-    //     }
-
-    //     for (Map.Entry<String, Integer> entry : list) {
-    //         sortedList.add(entry.getKey() + ": " + entry.getValue() + "\n");
-    //     };
-        
-    //     return sortedList;
-    // }
 
     @Override
     public void output(String outputPath, String order, int range, IOHandler handler) {
-        if (words.size() == 0) throw new WordFrequencyException("Word not found.");
+        if (words.size() == 0)
+            throw new WordFrequencyException("Word not found.");
         if (range > words.size() || range < 1)
-            throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", words.size()));
-            
+            throw new WordFrequencyException(
+                    String.format("Out of range! The range should be from 1 to %d.", words.size()));
+
         switch (order) {
         case "des":
             handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));

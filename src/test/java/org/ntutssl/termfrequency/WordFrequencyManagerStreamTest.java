@@ -66,22 +66,22 @@ public class WordFrequencyManagerStreamTest {
         assertEquals(wordList, wfm.getWordFrequency(SortOrder.ASCENDING));
     }
 
-    // @Test
-    // public void wordFreqDesTest() {
-    //     wordList.add("dog: 3");
-    //     wordList.add("bear: 2");
-    //     wordList.add("cat: 1");
-    //     wfm.incrementCount("dog");
-    //     wfm.incrementCount("cat");
-    //     wfm.incrementCount("dog");
-    //     wfm.incrementCount("bear");
-    //     wfm.incrementCount("bear");
-    //     wfm.incrementCount("dog");
+    @Test
+    public void wordFreqDesTest() {
+        wordList.add("dog: 3\n");
+        wordList.add("bear: 2\n");
+        wordList.add("cat: 1\n");
+        wfm.incrementCount("dog");
+        wfm.incrementCount("cat");
+        wfm.incrementCount("dog");
+        wfm.incrementCount("bear");
+        wfm.incrementCount("bear");
+        wfm.incrementCount("dog");
         
-    //     for (Entry<String, Integer> word : wfm.getWords().entrySet()) {
-    //         System.out.println(word.getKey() + " " + word.getValue());
-    //     }
+        // for (Entry<String, Integer> word : wfm.getWords().entrySet()) {
+        //     System.out.println(word.getKey() + " " + word.getValue());
+        // }
 
-    //     assertEquals(wordList, wfm.getWordFrequency(SortOrder.DESCENDING));
-    // }
+        assertEquals(wordList, wfm.getWordFrequency(SortOrder.DESCENDING));
+    }
 }
