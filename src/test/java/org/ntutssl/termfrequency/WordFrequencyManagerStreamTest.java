@@ -20,7 +20,7 @@ public class WordFrequencyManagerStreamTest {
     @Before
     public void setUp() {
         wfm = new WordFrequencyManagerStream();
-        wordList = new ArrayList<>();
+        wordList = new LinkedList<>();
     }
 
     @After
