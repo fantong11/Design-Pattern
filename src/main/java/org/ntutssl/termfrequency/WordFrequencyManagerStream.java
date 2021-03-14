@@ -78,7 +78,7 @@ public class WordFrequencyManagerStream implements IWordFrequencyManager {
         }
 
         for (Map.Entry<String, Integer> entry : list) {
-            sortedList.add(entry.getKey() + ": " + entry.getValue());
+            sortedList.add(entry.getKey() + ": " + entry.getValue() + "\n");
         };
         
         return sortedList;

@@ -48,7 +48,7 @@ public class IOHandler {
         try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
             for (int i = 0; i < data.size(); i++) {
                 if (i >= range) break;
-                br.write(data.get(i) + "\n");
+                br.write(data.get(i));
             }
         } catch (IOException ex) {
             System.out.println("Something wrong!");
