@@ -58,7 +58,7 @@ public class WordFrequencyManager implements IWordFrequencyManager {
         }
 
         for (Entry<String, Integer> word : list) {
-            wordList.add(word.getKey() + ": " + word.getValue());
+            wordList.add(word.getKey() + ": " + word.getValue() + "\n");
         }
 
         return wordList;
