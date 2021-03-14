@@ -54,9 +54,9 @@ public class WordFrequencyManagerStreamTest {
 
     @Test
     public void wordFreqAscTest() {
-        wordList.add("cat: 1");
-        wordList.add("bear: 2");
-        wordList.add("dog: 3");
+        wordList.add("cat: 1\n");
+        wordList.add("bear: 2\n");
+        wordList.add("dog: 3\n");
         wfm.incrementCount("dog");
         wfm.incrementCount("cat");
         wfm.incrementCount("dog");
