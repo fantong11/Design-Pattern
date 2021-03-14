@@ -44,7 +44,6 @@ public class WordFrequencyManagerStream implements IWordFrequencyManager {
         List<String> wordList = new LinkedList<>();
 
         if (order.equals(SortOrder.DESCENDING)) {
-            // System.out.println("sdfjlskd;fklsd");
             list.stream().sorted(new Comparator<Entry<String, Integer>>() {
                 @Override
                 public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {

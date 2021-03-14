@@ -38,7 +38,7 @@ public class IOHandler {
                 this.wordSet.add(scanner.next().toLowerCase());
             }
         } catch (FileNotFoundException ex) {
-            System.out.println("File is not exist!");
+            throw new WordFrequencyException("File is not exist!", ex);
         }
         return this.wordSet;
     }
@@ -51,7 +51,7 @@ public class IOHandler {
                 br.write(data.get(i));
             }
         } catch (IOException ex) {
-            System.out.println("Something wrong!");
+            throw new WordFrequencyException("Path have some problem!", ex);
         }
     }
 }

@@ -73,6 +73,8 @@ public class WordFrequencyManager implements IWordFrequencyManager {
         case "asc":
             handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.ASCENDING));
             break;
+        default:
+            throw new WordFrequencyException("The order should be \"asc\" or \"des\".");
         }
     }
 }
