@@ -83,6 +83,20 @@ public class WordFrequencyManagerStream implements IWordFrequencyManager {
     //     return sortedList;
     // }
 
+    @Override
     public void output(String outputPath, String order, int range, IOHandler handler) {
+        if (range > words.size() || range < 1)
+            throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", words.size()));
+            
+        switch (order) {
+        case "des":
+            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
+            break;
+        case "asc":
+            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.ASCENDING));
+            break;
+        default:
+            throw new WordFrequencyException("The order should be \"asc\" or \"des\".");
+        }
     }
 }

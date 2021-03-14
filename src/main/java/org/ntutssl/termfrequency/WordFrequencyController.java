@@ -22,8 +22,7 @@ public class WordFrequencyController {
             }
         }
         // System.out.println(dsm.getWords().size());
-        if (range > dsm.getWords().size() || range < 1)
-            throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", dsm.getWords().size()));
+        
         this.wfm.output(outputPath, order, range, handler);
 
     }
