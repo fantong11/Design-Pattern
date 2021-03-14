@@ -66,9 +66,10 @@ public class WordFrequencyManager implements IWordFrequencyManager {
 
     @Override
     public void output(String outputPath, String order, int range, IOHandler handler) {
+        if (words.size() == 0) throw new WordFrequencyException("Word not found.");
         if (range > words.size() || range < 1)
             throw new WordFrequencyException(String.format("Out of range! The range should be from 1 to %d.", words.size()));
-            
+
         switch (order) {
         case "des":
             handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
