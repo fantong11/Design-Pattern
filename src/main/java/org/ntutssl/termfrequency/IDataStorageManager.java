@@ -1,3 +1,7 @@
 package org.ntutssl.termfrequency;
 
-public interface IDataStorageManager { }
+import java.util.List;
+
+public interface IDataStorageManager {
+    public List<String> getWords();
+}
