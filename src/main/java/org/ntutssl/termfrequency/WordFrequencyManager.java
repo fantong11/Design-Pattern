@@ -71,7 +71,7 @@ public class WordFrequencyManager implements IWordFrequencyManager {
             handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
             break;
         case "asc":
-            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.DESCENDING));
+            handler.handleOutput(outputPath, range, getWordFrequency(SortOrder.ASCENDING));
             break;
         }
     }

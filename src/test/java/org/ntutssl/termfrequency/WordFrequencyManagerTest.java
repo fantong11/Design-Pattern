@@ -52,9 +52,9 @@ public class WordFrequencyManagerTest {
 
     @Test
     public void wordFreqAscTest() {
-        wordList.add("test1: 1");
-        wordList.add("test2: 2");
-        wordList.add("test3: 3");
+        wordList.add("test1: 1\n");
+        wordList.add("test2: 2\n");
+        wordList.add("test3: 3\n");
         wfm.incrementCount("test3");
         wfm.incrementCount("test1");
         wfm.incrementCount("test3");
@@ -66,9 +66,9 @@ public class WordFrequencyManagerTest {
 
     @Test
     public void wordFreqDesTest() {
-        wordList.add("test3: 3");
-        wordList.add("test2: 2");
-        wordList.add("test1: 1");
+        wordList.add("test3: 3\n");
+        wordList.add("test2: 2\n");
+        wordList.add("test1: 1\n");
         wfm.incrementCount("test3");
         wfm.incrementCount("test1");
         wfm.incrementCount("test3");
