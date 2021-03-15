@@ -32,7 +32,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("test1");
         wfm.incrementCount("test2");
         wfm.incrementCount("test3");
-        
+
         assertEquals(3, wfm.getNumOfWords());
     }
 
@@ -63,7 +63,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("bear");
         wfm.incrementCount("bear");
         wfm.incrementCount("dog");
-        
+
         assertEquals(wordList, wfm.getWordFrequency(SortOrder.ASCENDING));
     }
 
@@ -78,7 +78,7 @@ public class WordFrequencyManagerStreamTest {
         wfm.incrementCount("bear");
         wfm.incrementCount("bear");
         wfm.incrementCount("dog");
-        
+
         assertEquals(wordList, wfm.getWordFrequency(SortOrder.DESCENDING));
     }
 }

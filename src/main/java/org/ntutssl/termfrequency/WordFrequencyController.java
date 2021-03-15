@@ -15,13 +15,13 @@ public class WordFrequencyController {
     }
 
     public void run(String order, Integer range, String outputPath) {
-        
+
         for (String word : this.dsm.getWords()) {
             if (!this.swm.isStopWordSet(word)) {
                 this.wfm.incrementCount(word);
             }
         }
-        
+
         this.wfm.output(outputPath, order, range, handler);
 
     }
