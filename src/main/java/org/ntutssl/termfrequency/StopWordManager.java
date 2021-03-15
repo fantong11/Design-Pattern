@@ -22,7 +22,7 @@ public class StopWordManager implements IStopWordManager {
     public boolean isStopWordList(String word) {
         return this.stopWordList.contains(word);
     }
-             
+
     @Override
     public boolean isStopWordSet(String word) {
         return this.stopWordSet.contains(word);

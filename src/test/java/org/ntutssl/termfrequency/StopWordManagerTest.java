@@ -94,7 +94,7 @@ public class StopWordManagerTest {
     }
 
     @Test
-    public void notStopWordListTest() { 
+    public void notStopWordListTest() {
         assertFalse(swm.isStopWordList("ebooks"));
         assertFalse(swm.isStopWordList("facility"));
         assertFalse(swm.isStopWordList("originator"));

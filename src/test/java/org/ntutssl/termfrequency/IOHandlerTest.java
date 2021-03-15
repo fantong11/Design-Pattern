@@ -47,4 +47,14 @@ public class IOHandlerTest {
         set = handler.handleInputAsSet("input/stop_words.txt", ",");
         assertFalse(set.contains("!"));
     }
+
+    @Test(expected = WordFrequencyException.class)
+    public void inValidFilePathListTest() {
+        handler.handleInputAsList("filePath", ",");
+    }
+
+    @Test(expected = WordFrequencyException.class)
+    public void inValidFilePathSetTest() {
+        handler.handleInputAsSet("filePath", ",");
+    }
 }
