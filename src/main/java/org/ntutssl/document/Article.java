@@ -11,8 +11,7 @@ public class Article implements Document {
 	public Article(String topic, int level) {
 		this.documents = new ArrayList<>();
 		this.topic = topic;
-		/*if (level <= 0) throw new DocumentException("Not allow low level.");
-		else*/ this.level = level;
+		this.level = level;
 	}
 
 	public Document getContent(int index) {
@@ -30,6 +29,7 @@ public class Article implements Document {
 
 	@Override
 	public void add(Document document) {
+		if (this.documents.size() > this.level) throw new DocumentException("error");
 		this.documents.add(document);
 	}
 }
