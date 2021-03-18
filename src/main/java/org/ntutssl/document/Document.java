@@ -1,9 +1,9 @@
 package org.ntutssl.document;
 
 public interface Document {
-    public Document getContent();
+    default public Document getContent() { return null; }
 
-    public int getLevel();
+    default public int getLevel() { return 0; }
 
-    public void add(Document document);
+    default public void add(Document document) {}
 }

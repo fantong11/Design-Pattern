@@ -1,7 +1,13 @@
 package org.ntutssl.document;
 
 public class Title implements Document {
-  public Title(String text) {  }
+	private String text;
 
-  public String getText() {  }
+	public Title(String text) {
+		this.text = text;
+	}
+
+	public String getText() {
+		return this.text;
+	}
 }
