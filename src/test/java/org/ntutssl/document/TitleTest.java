@@ -1,6 +1,7 @@
 package org.ntutssl.document;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,5 +23,16 @@ public class TitleTest {
     @Test
     public void getTextTest() {
         assertEquals("test", title.getText());
+    }
+
+    @Test
+    public void addTest() {
+        boolean thrown = false;
+        try {
+            title.add(new Article("topic", 10));
+        } catch (Exception e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 }
