@@ -29,6 +29,9 @@ public class Article implements Document {
 
 	@Override
 	public void add(Document document) {
+		if (document.getClass().equals(Article.class)) {
+			if (document.getLevel() <= getLevel()) throw new DocumentException("error");
+		}
 		this.documents.add(document);
 	}
 }

@@ -41,4 +41,9 @@ public class ArticleTest {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus tortor commodo, convallis libero quis, varius nibh. Nam quis diam velit. Donec placerat neque sit amet laoreet fermentum. Nullam sed nulla fringilla, rhoncus leo non, dictum tortor. Aliquam faucibus eget lorem a feugiat. Aliquam at pharetra erat, vel egestas nunc. Ut varius libero sed nibh aliquet consequat. Aliquam mattis porttitor dignissim.",
                 article.getContent(1).getText());
     }
+
+    @Test
+    public void addArticleIntoArticleTest() {
+        article.add(new Article("topic", 4));
+    }
 }
