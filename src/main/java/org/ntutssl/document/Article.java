@@ -29,7 +29,6 @@ public class Article implements Document {
 
 	@Override
 	public void add(Document document) {
-		if (this.documents.size() > this.level) throw new DocumentException("error");
 		this.documents.add(document);
 	}
 }
