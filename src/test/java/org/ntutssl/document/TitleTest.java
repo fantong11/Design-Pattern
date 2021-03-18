@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TitleTest {
-    private Title title;
+    Title title;
 
     @Before
     public void setUp() {

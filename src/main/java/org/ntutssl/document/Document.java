@@ -1,11 +1,13 @@
 package org.ntutssl.document;
 
 public interface Document {
-    default public Document getContent() {
+    public String getText();
+
+    default public Document getContent(int i) {
         throw new DocumentException("getContent invalid.");
     }
 
-    default public int getLevel() { 
+    default public int getLevel() {
         throw new DocumentException("getLevel invalid.");
     }
 
