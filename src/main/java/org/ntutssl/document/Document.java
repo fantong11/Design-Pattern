@@ -1,17 +1,25 @@
 package org.ntutssl.document;
 
-public interface Document {
-    public String getText();
+public interface Document {  
+  public default int getLevel() {
+    
+  }
+  
+  public default void add(Document document) {
+    
+  }
+  
+  public default Iterator<Document> iterator() {
+    
+  }
+  
+  public default int getSize() {
+    
+  }
 
-    default public Document getContent(int i) {
-        throw new DocumentException("getContent invalid.");
-    }
+  public String getText();
 
-    default public int getLevel() {
-        throw new DocumentException("getLevel invalid.");
-    }
+  public void accept(Visitor visitor);
 
-    default public void add(Document document) {
-        throw new DocumentException("add invalid.");
-    }
+  public String toString();
 }

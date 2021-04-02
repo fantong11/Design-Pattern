@@ -1,13 +1,21 @@
 package org.ntutssl.document;
 
 public class Paragraph implements Document {
-	private String text;
+  public Paragraph(String text) {
+    
+  }
 
-	public Paragraph(String text) {
-		this.text = text;
-	}
+  public String getText() {
+    
+  }
 
-	public String getText() {
-		return this.text;
-	}
+  @Override
+  public void accept(Visitor visitor) {
+    
+  }
+
+  @Override
+  public String toString() {
+    
+  }
 }
