@@ -12,11 +12,11 @@ public interface Document {
   	}
   
   	public default Iterator<Document> iterator() {
-		throw new NullIterator();
+		return new NullIterator();
   	}
   
   	public default int getSize() {
-    
+        throw new DocumentException("getSize invalid.");
   	}
 
   	public String getText();

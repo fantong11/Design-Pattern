@@ -44,6 +44,6 @@ public class Article implements Document {
 
   	@Override
  	public String toString() {
-		
+		return "Article\t\ttopic: " + topic + "\n\t\tlevel: " + level;
   	}
 }

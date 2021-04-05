@@ -6,6 +6,7 @@ public class Title implements Document {
 
   	public Title(String text, int size) {
 		this.text = text;
+		this.fontSize = size;
   	}
 
   	public String getText() {
@@ -13,7 +14,7 @@ public class Title implements Document {
   	}
 
   	public int getSize() {
-		
+		return fontSize;
   	}
 
   	@Override
@@ -23,6 +24,6 @@ public class Title implements Document {
 
   	@Override
   	public String toString() {
-		
+		return "Title\t\ttext: " + text + "\n\t\tsize: " + fontSize;
   	}
 }

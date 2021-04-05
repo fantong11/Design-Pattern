@@ -18,6 +18,6 @@ public class Paragraph implements Document {
 
   	@Override
   	public String toString() {
-		
+		return "Paragraph\ttext: " + text;
   	}
 }

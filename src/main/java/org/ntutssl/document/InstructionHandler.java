@@ -18,15 +18,15 @@ public class InstructionHandler {
 	}
 
 	private Document addTitleInstruction() {
-		
+		return null;
 	}
 
 	private Document addParagraphInstruction() {
-		
+		return null;
 	}
 
 	private Document addArticleInstruction(int lastLevel) {
-		
+		return null;
 	}
 
 	private void printArticleInstructions() {
