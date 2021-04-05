@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.ntutssl</groupId>
-  <artifactId>dp2021s_TA_HW</artifactId>
+  <artifactId>dp2020s_107590051_HW</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>dp2021s_TA_HW</name>
+  <name>dp2020s_107590051_HW</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -19,12 +19,6 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20201115</version>
-    </dependency>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

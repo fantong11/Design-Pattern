@@ -1,5 +1,7 @@
 package org.ntutssl.document;
 
+import java.util.Iterator;
+
 public interface Document {  
   	public default int getLevel() {
 		throw new DocumentException("getLevel invalid.");
@@ -10,7 +12,7 @@ public interface Document {
   	}
   
   	public default Iterator<Document> iterator() {
-    
+		throw new NullIterator();
   	}
   
   	public default int getSize() {
