@@ -1,6 +1,8 @@
 package org.ntutssl.document;
 
-public class HtmlOutputVisitor {
+import java.util.List;
+
+public class HtmlOutputVisitor implements Visitor<List<Document>> {
 	public HtmlOutputVisitor() {
 
 	}
