@@ -2,7 +2,8 @@ package org.ntutssl.document;
 
 import java.util.List;
 
-public class HtmlOutputVisitor implements Visitor<List<Document>> {
+public class HtmlOutputVisitor implements Visitor<String> {
+
 	public HtmlOutputVisitor() {
 
 	}
@@ -20,6 +21,7 @@ public class HtmlOutputVisitor implements Visitor<List<Document>> {
 	}
 
 	public String getResult() {
-		return "";
+		String result = "sda;fjkl";
+		return result;
 	}
 }
