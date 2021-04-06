@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.ArticleTest" time="0.032" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.FindContentVisitorTest" time="0" tests="3" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -55,14 +55,11 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="addSinglePrimitiveDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0.004"/>
-  <testcase name="getLevelTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="addSingleArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="addMultiPrimitiveDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0.001"/>
-  <testcase name="addArticleAndPrimitiveDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="addMultiArticleDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="toStringTest" classname="org.ntutssl.document.ArticleTest" time="0.001"/>
-  <testcase name="addLowLevelArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="getTextTest" classname="org.ntutssl.document.ArticleTest" time="0.001"/>
-  <testcase name="addHighLevelArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
+  <testcase name="visitTitleTest" classname="org.ntutssl.document.FindContentVisitorTest" time="0"/>
+  <testcase name="visitArticleTest" classname="org.ntutssl.document.FindContentVisitorTest" time="0">
+    <error message="Index 1 out of bounds for length 1" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at org.ntutssl.document.FindContentVisitorTest.visitArticleTest(FindContentVisitorTest.java:36)
+</error>
+  </testcase>
+  <testcase name="visitParagraphTest" classname="org.ntutssl.document.FindContentVisitorTest" time="0"/>
 </testsuite>

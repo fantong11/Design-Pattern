@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: org.ntutssl.document.ArticleTest
+Test set: org.ntutssl.document.EditorTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.ntutssl.document.ArticleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.ntutssl.document.EditorTest
