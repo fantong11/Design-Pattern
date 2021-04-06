@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.ArticleTest" time="0.054" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.ArticleTest" time="0.028" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
     <property name="sun.jnu.encoding" value="MS950"/>
-    <property name="java.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\org\json\json\20201115\json-20201115.jar;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471\surefirebooter4214234395998949610.jar C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471 2021-04-06T23-21-14_149-jvmRun1 surefire16032455510326850068tmp surefire_015899860526225459472tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire339553446338485109\surefirebooter3788031648930010381.jar C:\Users\Fantong\AppData\Local\Temp\surefire339553446338485109 2021-04-06T23-58-21_391-jvmRun1 surefire11997015398387115750tmp surefire_04756322179165350110tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\org\json\json\20201115\json-20201115.jar;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Fantong"/>
     <property name="user.language" value="zh"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471\surefirebooter4214234395998949610.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire339553446338485109\surefirebooter3788031648930010381.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="java.runtime.version" value="15.0.2+7"/>
@@ -55,13 +55,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="addSinglePrimitiveDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0.009"/>
+  <testcase name="addSinglePrimitiveDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0.004"/>
   <testcase name="getLevelTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
   <testcase name="addSingleArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="addMultiPrimitiveDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0.001"/>
+  <testcase name="addMultiPrimitiveDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
   <testcase name="addArticleAndPrimitiveDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
   <testcase name="addMultiArticleDocumentsTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
-  <testcase name="toStringTest" classname="org.ntutssl.document.ArticleTest" time="0.001"/>
+  <testcase name="toStringTest" classname="org.ntutssl.document.ArticleTest" time="0.002"/>
   <testcase name="addLowLevelArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
   <testcase name="getTextTest" classname="org.ntutssl.document.ArticleTest" time="0"/>
   <testcase name="addHighLevelArticleDocumentTest" classname="org.ntutssl.document.ArticleTest" time="0"/>

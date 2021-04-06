@@ -118,6 +118,6 @@ public class ArticleTest {
     @Test
     public void toStringTest() {
         System.out.println(article.toString());
-        assertEquals("Article\t\ttopic: test\n\t\tlevel: 5", article.toString());
+        assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", article.toString());
     }
 }

@@ -39,6 +39,6 @@ public class ParagraphTest {
     @Test
     public void toStringTest() {
         System.out.println(paragraph.toString());
-        assertEquals("Paragraph\ttext: test", paragraph.toString());
+        assertEquals("Paragraph\ttext: test\n", paragraph.toString());
     }
 }

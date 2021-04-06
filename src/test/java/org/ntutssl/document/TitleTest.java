@@ -39,6 +39,6 @@ public class TitleTest {
     @Test
     public void toStringTest() {
         System.out.println(title.toString());
-        assertEquals("Title\t\ttext: test\n\t\tsize: 20", title.toString());
+        assertEquals("Title\t\ttext: test\n\t\tsize: 20\n", title.toString());
     }
 }
