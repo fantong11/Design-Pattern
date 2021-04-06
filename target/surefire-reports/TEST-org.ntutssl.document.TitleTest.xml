@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.TitleTest" time="0.001" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.document.TitleTest" time="0.003" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/fantong/Desktop/dp2021s_107590051_hw/target/test-classes:/Users/fantong/Desktop/dp2021s_107590051_hw/target/classes:/Users/fantong/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/fantong/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="sun.jnu.encoding" value="MS950"/>
+    <property name="java.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
-    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
-    <property name="os.name" value="Mac OS X"/>
+    <property name="user.timezone" value="Asia/Taipei"/>
+    <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/fantong/Desktop/dp2021s_107590051_hw/target/surefire/surefirebooter18429947891722980313.jar /Users/fantong/Desktop/dp2021s_107590051_hw/target/surefire 2021-04-06T19-12-58_053-jvmRun1 surefire16484567706636383205tmp surefire_012291771972049380978tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471\surefirebooter4214234395998949610.jar C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471 2021-04-06T23-21-14_149-jvmRun1 surefire16032455510326850068tmp surefire_015899860526225459472tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/fantong/Desktop/dp2021s_107590051_hw/target/test-classes:/Users/fantong/Desktop/dp2021s_107590051_hw/target/classes:/Users/fantong/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/fantong/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/fantong"/>
+    <property name="user.home" value="C:\Users\Fantong"/>
     <property name="user.language" value="zh"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2021-01-19"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/fantong/Desktop/dp2021s_107590051_hw"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.home" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/fantong/Desktop/dp2021s_107590051_hw/target/surefire/surefirebooter18429947891722980313.jar"/>
-    <property name="user.script" value="Hant"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire13566635550320099471\surefirebooter4214234395998949610.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="java.runtime.version" value="15.0.2+7"/>
-    <property name="user.name" value="fantong"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="10.16"/>
+    <property name="user.name" value="Fantong"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding" value="MS950"/>
+    <property name="java.vm.name" value="OpenJDK Client VM"/>
     <property name="java.vendor.version" value="AdoptOpenJDK"/>
-    <property name="localRepository" value="/Users/fantong/.m2/repository"/>
+    <property name="localRepository" value="C:\Users\Fantong\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-support/issues"/>
-    <property name="java.io.tmpdir" value="/var/folders/kh/m3lqgw1103191w7wd048lf480000gn/T/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Fantong\AppData\Local\Temp\"/>
     <property name="java.version" value="15.0.2"/>
-    <property name="user.dir" value="/Users/fantong/Desktop/dp2021s_107590051_hw"/>
-    <property name="os.arch" value="x86_64"/>
+    <property name="user.dir" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw"/>
+    <property name="os.arch" value="x86"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="java.library.path" value="/Users/fantong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Fantong\bin;C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Fantong\AppData\Local\Microsoft\WindowsApps;C:\Users\Fantong\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin;C:\OpenCV\opencv\build\x64\vc14\bin;C:\OpenCV\opencv-3.4.0\build\x64\vc14\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat;C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Fantong\AppData\Local\Microsoft\WindowsApps;C:\Users\Fantong\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Fantong\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\Fantong\AppData\Local\gitkraken\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="AdoptOpenJDK"/>
     <property name="java.vm.version" value="15.0.2+7"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
   <testcase name="addTest" classname="org.ntutssl.document.TitleTest" time="0"/>
-  <testcase name="toStringTest" classname="org.ntutssl.document.TitleTest" time="0"/>
+  <testcase name="toStringTest" classname="org.ntutssl.document.TitleTest" time="0.001"/>
   <testcase name="getTextTest" classname="org.ntutssl.document.TitleTest" time="0"/>
 </testsuite>

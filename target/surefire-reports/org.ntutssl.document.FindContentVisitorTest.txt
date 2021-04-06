@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.ntutssl.document.FindContentVisitorTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in org.ntutssl.document.FindContentVisitorTest
-visitArticleTest(org.ntutssl.document.FindContentVisitorTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at org.ntutssl.document.FindContentVisitorTest.visitArticleTest(FindContentVisitorTest.java:36)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.ntutssl.document.FindContentVisitorTest

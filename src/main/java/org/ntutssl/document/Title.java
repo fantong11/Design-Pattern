@@ -24,6 +24,6 @@ public class Title implements Document {
 
   	@Override
   	public String toString() {
-		return "Title\t\ttext: " + text + "\n\t\tsize: " + fontSize;
+		return "Title\t\ttext: " + text + "\n\t\tsize: " + fontSize + "\n";
   	}
 }
