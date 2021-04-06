@@ -27,13 +27,15 @@ public class FindContentVisitorTest {
         Document article2 = new Article("Design Patterns", 2);
         Document paragragh = new Paragraph("This course discusses design patterns.");
         Document article3 = new Article("Design", 3);
+        article2.add(new Article("design slkjfaslkfjlk;sdajf;lsz", 3));
         article.add(article2);
         article.add(paragragh);
         article.add(article3);
+        
         article.accept(fcv);
         List<Document> result = fcv.getResult();
         System.out.println(result);
-        assertEquals("Design Patterns", result.get(0).getText());
+        assertEquals("Course Design Pattern", result.get(0).getText());
         // assertEquals("Design", result.get(1).getText());
     }
 

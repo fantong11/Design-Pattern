@@ -1,5 +1,7 @@
 package org.ntutssl.document;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class InstructionHandler {
@@ -144,6 +146,22 @@ public class InstructionHandler {
 	}
 
 	private void findContentInstruction() {
+		System.out.print("Enter the word you wnat to find: ");
+		String target = scanner.nextLine();
+
+		FindContentVisitor fcv = new FindContentVisitor(target);
+		Iterator<Document> it = editor.iterator();
+
+		while (it.hasNext()) {
+			Document document = it.next();
+			document.accept(fcv);
+		}
+
+		List<Document> result = fcv.getResult();
+		
+		for (Document document : result) {
+			System.out.println(document.toString());
+		}
 
 	}
 
