@@ -4,11 +4,11 @@ import java.util.Iterator;
 
 public interface Document {
 	public default int getLevel() {
-		throw new DocumentException("getLevel invalid.");
+		throw new DocumentException("Invalid action: getLevel");
 	}
 
 	public default void add(Document document) {
-		throw new DocumentException("Add invalid.");
+		throw new DocumentException("Invalid action: add");
 	}
 
 	public default Iterator<Document> iterator() {
@@ -16,7 +16,7 @@ public interface Document {
 	}
 
 	public default int getSize() {
-		throw new DocumentException("getSize invalid.");
+		throw new DocumentException("Invalid action: getSize");
 	}
 
 	public String getText();

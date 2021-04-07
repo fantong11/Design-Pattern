@@ -1,7 +1,6 @@
 package org.ntutssl.document;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -12,11 +11,13 @@ import org.junit.Test;
 public class FindContentVisitorTest {
     FindContentVisitor fcv;
     FindContentVisitor fcvEmpty;
+    FindContentVisitor fcvReturn;
 
     @Before
     public void setUp() {
         fcv = new FindContentVisitor("design");
         fcvEmpty = new FindContentVisitor(" ");
+        fcvReturn = new FindContentVisitor("\n");
     }
 
     @After
@@ -39,6 +40,9 @@ public class FindContentVisitorTest {
         article.accept(fcv);
         List<Document> result = fcv.getResult();
         assertEquals("Course Design Pattern", result.get(0).getText());
+        assertEquals("Design Patterns", result.get(1).getText());
+        assertEquals("design slkjfaslkfjlk;sdajf;lsz", result.get(2).getText());
+        assertEquals("This course discusses design patterns.", result.get(3).getText());
     }
 
     @Test
@@ -74,6 +78,14 @@ public class FindContentVisitorTest {
     }
 
     @Test
+    public void visitParagraphWithReturnStringTest() {
+        Document paragragh = new Paragraph("Design patterns");
+        paragragh.accept(fcvReturn);
+        List<Document> result = fcvReturn.getResult();
+        assertEquals(0, result.size());
+    }
+
+    @Test
     public void visitTitleWithEmptyStringTest() {
         Document title = new Title("Design patterns", 1);
         title.accept(fcvEmpty);
@@ -90,6 +102,14 @@ public class FindContentVisitorTest {
     }
 
     @Test
+    public void visitTitleWithReturnStringTest() {
+        Document title = new Title("Design patterns", 1);
+        title.accept(fcvReturn);
+        List<Document> result = fcvReturn.getResult();
+        assertEquals(0, result.size());
+    }
+
+    @Test
     public void visitArticleWithEmptyStringTest() {
         Document article = new Article("Design patterns", 1);
         article.accept(fcvEmpty);
@@ -103,5 +123,13 @@ public class FindContentVisitorTest {
         article.accept(fcvEmpty);
         List<Document> result = fcvEmpty.getResult();
         assertEquals(1, result.size());
+    }
+
+    @Test
+    public void visitArticleWithReturnStringTest() {
+        Document article = new Article("Design patterns", 1);
+        article.accept(fcvReturn);
+        List<Document> result = fcvReturn.getResult();
+        assertEquals(0, result.size());
     }
 }

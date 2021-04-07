@@ -2,13 +2,15 @@ package org.ntutssl.document;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class ArticleTest {
     Document article;
@@ -85,23 +87,30 @@ public class ArticleTest {
         assertEquals("789", iterator.next().getText());
     }
 
-    // @Test
-    // public void addPrimitiveDocumentsInArticleInArticleTest() {
-    // this.article.add(new Article("Lorem", 7));
-    // iterator = article.iterator();
-    // iterator.next().add(new Title("test", 20));
-    // assertEquals("test", article.getContent(0).getContent(0).getText());
-    // }
+    @Test
+    public void addPrimitiveDocumentsInArticleInArticleTest() {
+        FindContentVisitor fcv = new FindContentVisitor("test");
+        article.add(new Article("test", 7));
+        iterator = article.iterator();
+        iterator.next().add(new Title("test2", 20));
+        article.accept(fcv);
+        List<Document> result = fcv.getResult();
+        assertEquals("test", result.get(1).getText());
+    }
+
+    @Test
+    public void toStringTest() {
+        assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", article.toString());
+    }
+
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
     public void addLowLevelArticleDocumentTest() {
-        boolean thrown = false;
-        try {
-            article.add(new Article("topic", 4));
-        } catch (Exception e) {
-            thrown = true;
-        }
-        assertTrue(thrown);
+        expectedEx.expect(DocumentException.class);
+        expectedEx.expectMessage("Level must be higher than current article.");
+        article.add(new Article("topic", 4));
     }
 
     @Test
@@ -116,7 +125,9 @@ public class ArticleTest {
     }
 
     @Test
-    public void toStringTest() {
-        assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", article.toString());
+    public void getSizeTest() {
+        expectedEx.expect(DocumentException.class);
+        expectedEx.expectMessage("Invalid action: getSize");
+        article.getSize();
     }
 }

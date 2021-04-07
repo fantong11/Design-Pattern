@@ -158,7 +158,7 @@ public class InstructionHandler {
 	}
 
 	private void findContentInstruction() {
-		System.out.print("Enter the word you wnat to find: ");
+		System.out.print("Enter the word you want to find: ");
 		String target = scanner.nextLine();
 
 		FindContentVisitor fcv = new FindContentVisitor(target);
