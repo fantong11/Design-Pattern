@@ -34,8 +34,10 @@ public class InstructionHandler {
 		switch (instruction) {
 		case "add title":
 			Document title = addTitleInstruction();
-			editor.add(title);
-			System.out.println("Title added to the editor.");
+			if (title != null) {
+				editor.add(title);
+				System.out.println("Title added to the editor.");
+			}
 			break;
 
 		case "add paragraph":
@@ -46,8 +48,10 @@ public class InstructionHandler {
 
 		case "add article":
 			Document article = addArticleInstruction(lastLevel);
-			editor.add(article);
-			handleArticleInstructions(instruction, (Article) article);
+			if (article != null) {
+				editor.add(article);
+				handleArticleInstructions(instruction, (Article) article);
+			}
 			break;
 
 		case "find content":
@@ -75,6 +79,10 @@ public class InstructionHandler {
 		String text = scanner.nextLine();
 		System.out.print("Size of title: ");
 		int size = Integer.parseInt(scanner.nextLine());
+		if (size < 1 || size > 6) {
+			System.out.println("Invalid Input: The size should be in range 1 to 6");
+			return null;
+		}
 		return new Title(text, size);
 	}
 
@@ -93,6 +101,11 @@ public class InstructionHandler {
 		String topic = scanner.nextLine();
 		System.out.print("Level of article: ");
 		int level = Integer.parseInt(scanner.nextLine());
+		if (level <= 0) {
+			System.out.println(
+					"Invalid Input: The level should be positive or higher than the level of the current article.");
+			return null;
+		}
 		this.lastLevel = level;
 
 		return new Article(topic, level);

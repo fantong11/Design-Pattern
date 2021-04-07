@@ -17,21 +17,17 @@ public class FindContentVisitor implements Visitor<List<Document>> {
 		if (paragraph.getText().toLowerCase().contains(target)) {
 			if (target.trim().length() > 0) {
 				result.add(paragraph);
-			}
-			else if (paragraph.getText().trim().length() == 0) {
+			} else if (paragraph.getText().trim().length() == 0) {
 				result.add(paragraph);
 			}
 		}
-		
-
 	}
 
 	public void visitTitle(Title title) {
 		if (title.getText().toLowerCase().contains(target)) {
 			if (target.trim().length() > 0) {
 				result.add(title);
-			}
-			else if (title.getText().trim().length() == 0) {
+			} else if (title.getText().trim().length() == 0) {
 				result.add(title);
 			}
 		}
@@ -43,8 +39,7 @@ public class FindContentVisitor implements Visitor<List<Document>> {
 		if (article.getText().toLowerCase().contains(target)) {
 			if (target.trim().length() > 0) {
 				result.add(article);
-			}
-			else if (article.getText().trim().length() == 0) {
+			} else if (article.getText().trim().length() == 0) {
 				result.add(article);
 			}
 		}
