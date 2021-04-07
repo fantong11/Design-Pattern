@@ -14,24 +14,39 @@ public class FindContentVisitor implements Visitor<List<Document>> {
 	}
 
 	public void visitParagraph(Paragraph paragraph) {
-		boolean textIsFound = paragraph.getText().toLowerCase().contains(target);
-		if (textIsFound) {
-			result.add(paragraph);
+		if (paragraph.getText().toLowerCase().contains(target)) {
+			if (target.trim().length() > 0) {
+				result.add(paragraph);
+			}
+			else if (paragraph.getText().trim().length() == 0) {
+				result.add(paragraph);
+			}
 		}
+		
+
 	}
 
 	public void visitTitle(Title title) {
-		boolean textIsFound = title.getText().toLowerCase().contains(target);
-		if (textIsFound) {
-			result.add(title);
+		if (title.getText().toLowerCase().contains(target)) {
+			if (target.trim().length() > 0) {
+				result.add(title);
+			}
+			else if (title.getText().trim().length() == 0) {
+				result.add(title);
+			}
 		}
 	}
 
 	public void visitArticle(Article article) {
 		Iterator<Document> it = article.iterator();
-		boolean textIsFound = article.getText().toLowerCase().contains(target);
-		if (textIsFound) {
-			result.add(article);
+
+		if (article.getText().toLowerCase().contains(target)) {
+			if (target.trim().length() > 0) {
+				result.add(article);
+			}
+			else if (article.getText().trim().length() == 0) {
+				result.add(article);
+			}
 		}
 
 		while (it.hasNext()) {
