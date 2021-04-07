@@ -87,10 +87,10 @@ public class ArticleTest {
 
     // @Test
     // public void addPrimitiveDocumentsInArticleInArticleTest() {
-    //     this.article.add(new Article("Lorem", 7));
-    //     iterator = article.iterator();
-    //     iterator.next().add(new Title("test", 20));
-    //     assertEquals("test", article.getContent(0).getContent(0).getText());
+    // this.article.add(new Article("Lorem", 7));
+    // iterator = article.iterator();
+    // iterator.next().add(new Title("test", 20));
+    // assertEquals("test", article.getContent(0).getContent(0).getText());
     // }
 
     @Test
@@ -117,7 +117,6 @@ public class ArticleTest {
 
     @Test
     public void toStringTest() {
-        System.out.println(article.toString());
         assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", article.toString());
     }
 }

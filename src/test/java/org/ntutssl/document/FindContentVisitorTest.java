@@ -31,12 +31,10 @@ public class FindContentVisitorTest {
         article.add(article2);
         article.add(paragragh);
         article.add(article3);
-        
+
         article.accept(fcv);
         List<Document> result = fcv.getResult();
-        System.out.println(result);
         assertEquals("Course Design Pattern", result.get(0).getText());
-        // assertEquals("Design", result.get(1).getText());
     }
 
     @Test

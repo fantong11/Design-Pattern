@@ -50,15 +50,18 @@ public class HtmlOutputVisitorTest {
         Document article1 = new Article("output", 1);
 
         Document h1 = new Title("Design Patterns", 1);
-        Document p1 = new Paragraph("This course discusses issues in principles of object-oriented design through design patterns.");
+        Document p1 = new Paragraph(
+                "This course discusses issues in principles of object-oriented design through design patterns.");
         Document article2 = new Article("Course Design Pattern", 2);
         Document h2 = new Title("Information", 2);
         Document p2 = new Paragraph("Professor: YC Cheng");
         Document article3 = new Article("Introduction", 3);
         Document h3 = new Title("What is design pattern?", 3);
-        Document p3 = new Paragraph("Design pattern are solutions to general problems that appear repeatedly in software engineering.");
+        Document p3 = new Paragraph(
+                "Design pattern are solutions to general problems that appear repeatedly in software engineering.");
         Document h22 = new Title("References", 2);
-        Document p22 = new Paragraph("Gamma, Erich, et al. Design patterns: elements of reusable object-oriented software. Pearson Education, 1994.");
+        Document p22 = new Paragraph(
+                "Gamma, Erich, et al. Design patterns: elements of reusable object-oriented software. Pearson Education, 1994.");
 
         article3.add(h3);
         article3.add(p3);
@@ -71,23 +74,17 @@ public class HtmlOutputVisitorTest {
         article1.add(p1);
         article1.add(article2);
         article1.accept(hov);
+
         String result = hov.getResult();
-        System.out.println(result);
-        String expectedResult 
-            = "<article topic='output'>\n"
-            + "  <h1>Design Patterns</h1>\n"
-            + "  <p>This course discusses issues in principles of object-oriented design through design patterns.</p>\n"
-            + "  <article topic='Course Design Pattern'>\n"
-            + "    <h2>Information</h2>\n"
-            + "    <p>Professor: YC Cheng</p>\n"
-            + "    <article topic='Introduction'>\n"
-            + "      <h3>What is design pattern?</h3>\n"
-            + "      <p>Design pattern are solutions to general problems that appear repeatedly in software engineering.</p>\n"
-            + "    </article>\n"
-            + "    <h2>References</h2>\n"
-            + "    <p>Gamma, Erich, et al. Design patterns: elements of reusable object-oriented software. Pearson Education, 1994.</p>\n"
-            + "  </article>\n"
-            + "</article>\n";
+        String expectedResult = "<article topic='output'>\n" + "  <h1>Design Patterns</h1>\n"
+                + "  <p>This course discusses issues in principles of object-oriented design through design patterns.</p>\n"
+                + "  <article topic='Course Design Pattern'>\n" + "    <h2>Information</h2>\n"
+                + "    <p>Professor: YC Cheng</p>\n" + "    <article topic='Introduction'>\n"
+                + "      <h3>What is design pattern?</h3>\n"
+                + "      <p>Design pattern are solutions to general problems that appear repeatedly in software engineering.</p>\n"
+                + "    </article>\n" + "    <h2>References</h2>\n"
+                + "    <p>Gamma, Erich, et al. Design patterns: elements of reusable object-oriented software. Pearson Education, 1994.</p>\n"
+                + "  </article>\n" + "</article>\n";
         assertEquals(expectedResult, result);
     }
 }

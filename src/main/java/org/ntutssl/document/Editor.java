@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Editor {  
+public class Editor {
 	private List<Document> editor;
 
-  	public Editor() {
+	public Editor() {
 		editor = new ArrayList<>();
-  	}
+	}
 
-  	public void add(Document document) {
+	public void add(Document document) {
 		editor.add(document);
-  	}
+	}
 
-  	public int size() {
+	public int size() {
 		return editor.size();
-  	}
+	}
 
-  	public Iterator<Document> iterator() {
+	public Iterator<Document> iterator() {
 		return editor.iterator();
-  	}
+	}
 }

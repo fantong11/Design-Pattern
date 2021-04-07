@@ -157,7 +157,7 @@ public class InstructionHandler {
 		}
 
 		List<Document> result = fcv.getResult();
-		
+
 		for (Document document : result) {
 			System.out.print(document.toString());
 		}

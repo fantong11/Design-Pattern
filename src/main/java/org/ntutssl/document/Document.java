@@ -2,26 +2,26 @@ package org.ntutssl.document;
 
 import java.util.Iterator;
 
-public interface Document {  
-  	public default int getLevel() {
+public interface Document {
+	public default int getLevel() {
 		throw new DocumentException("getLevel invalid.");
-  	}
-  
-  	public default void add(Document document) {
+	}
+
+	public default void add(Document document) {
 		throw new DocumentException("Add invalid.");
-  	}
-  
-  	public default Iterator<Document> iterator() {
+	}
+
+	public default Iterator<Document> iterator() {
 		return new NullIterator();
-  	}
-  
-  	public default int getSize() {
-        throw new DocumentException("getSize invalid.");
-  	}
+	}
 
-  	public String getText();
+	public default int getSize() {
+		throw new DocumentException("getSize invalid.");
+	}
 
-  	public void accept(Visitor visitor);
+	public String getText();
 
-  	public String toString();
+	public <T> void accept(Visitor<T> visitor);
+
+	public String toString();
 }
