@@ -7,7 +7,7 @@ import java.util.List;
 public class FindContentVisitor implements Visitor<List<Document>> {
 	private String target;
 	private List<Document> result;
-
+	
 	public FindContentVisitor(String target) {
 		this.target = target.toLowerCase();
 		this.result = new ArrayList<>();
@@ -36,13 +36,19 @@ public class FindContentVisitor implements Visitor<List<Document>> {
 
 		while (it.hasNext()) {
 			Document nextDocument = it.next();
-			if (nextDocument instanceof Article) {
-				visitArticle((Article) nextDocument);
-			} else if (nextDocument instanceof Title) {
-				visitTitle((Title) nextDocument);
-			} else if (nextDocument instanceof Paragraph) {
-				visitParagraph((Paragraph) nextDocument);
+			FindContentVisitor fcv = new FindContentVisitor(this.target);
+			nextDocument.accept(fcv);
+			List<Document> documentResult = fcv.getResult();
+			for (Document document : documentResult) {
+				this.result.add(document);
 			}
+			// if (nextDocument instanceof Article) {
+			// 	visitArticle((Article) nextDocument);
+			// } else if (nextDocument instanceof Title) {
+			// 	visitTitle((Title) nextDocument);
+			// } else if (nextDocument instanceof Paragraph) {
+			// 	visitParagraph((Paragraph) nextDocument);
+			// }
 		}
 	}
 

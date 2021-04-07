@@ -109,7 +109,6 @@ public class InstructionHandler {
 	}
 
 	private void handleArticleInstructions(String instruction, Article article) {
-		System.out.println("Article: " + article.getLevel());
 		printArticleInstructions();
 		instruction = scanner.nextLine();
 		Article previousArticle = null;
@@ -160,12 +159,22 @@ public class InstructionHandler {
 		List<Document> result = fcv.getResult();
 		
 		for (Document document : result) {
-			System.out.println(document.toString());
+			System.out.print(document.toString());
 		}
 
 	}
 
 	private void outputHtmlInstruction() {
+		HtmlOutputVisitor hov = new HtmlOutputVisitor();
+		Iterator<Document> it = editor.iterator();
 
+		while (it.hasNext()) {
+			Document document = it.next();
+			document.accept(hov);
+		}
+
+		String result = hov.getResult();
+
+		System.out.println(result);
 	}
 }
