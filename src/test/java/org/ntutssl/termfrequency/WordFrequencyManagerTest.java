@@ -2,8 +2,6 @@ package org.ntutssl.termfrequency;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Map.Entry;
-
 import org.junit.Test;
 
 public class WordFrequencyManagerTest {
