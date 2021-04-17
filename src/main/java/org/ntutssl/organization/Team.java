@@ -38,9 +38,9 @@ public class Team implements Workforce {
     String indent = "";
     for (int i = 0; i < indentCount; indent += " ", i++)
       ;
-    String type = indent + "Type:\tTeam (" + (this.isInHouse == true ? "in-house" : "outsourcing") + ")\n";
-    String name = indent + "Name:\t" + this.name + "\n";
-    String startDate = indent + "Start date:\t" + this.startDate + "\n";
+    String type = indent + "Type:       Team (" + (this.isInHouse == true ? "in-house" : "outsourcing") + ")\n";
+    String name = indent + "Name:       " + this.name + "\n";
+    String startDate = indent + "Start date: " + this.startDate + "\n";
 
     return type + name + startDate;
   }
