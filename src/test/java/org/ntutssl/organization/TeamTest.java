@@ -112,4 +112,11 @@ public class TeamTest {
         expectedEx.expectMessage("Invalid action: getSalary");
         team.getSalary();
     }
+
+    @Test
+    public void nameIsEmptyString() {
+        expectedEx.expect(OrganizationException.class);
+        expectedEx.expectMessage("Wrong name pattern");
+        new Team("", LocalDate.now(), true);
+    }
 }
