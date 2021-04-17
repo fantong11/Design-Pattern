@@ -9,6 +9,9 @@ public class Individual implements Workforce {
   private boolean isInHouse;
 
   public Individual(String name, int salary, LocalDate startDate, boolean isInHouse) {
+    if (name.isEmpty() || name.equals("[\\W_]+")){
+      throw new OrganizationException("Wrong name pattern");
+    }
     if (salary < 24000) throw new OrganizationException("Salary cannot smaller than 24000");
     this.name = name;
     this.salary = salary;
