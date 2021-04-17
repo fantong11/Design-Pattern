@@ -21,6 +21,7 @@ public class ListVisitor implements Visitor<String> {
     while (it.hasNext()) {
       it.next().accept(this);
     }
+    this.level--;
   }
 
   public void visitIndividual(Individual individual) {
