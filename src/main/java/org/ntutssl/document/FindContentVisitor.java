@@ -45,13 +45,7 @@ public class FindContentVisitor implements Visitor<List<Document>> {
 		}
 
 		while (it.hasNext()) {
-			Document nextDocument = it.next();
-			FindContentVisitor fcv = new FindContentVisitor(this.target);
-			nextDocument.accept(fcv);
-			List<Document> documentResult = fcv.getResult();
-			for (Document document : documentResult) {
-				this.result.add(document);
-			}
+			it.next().accept(this);
 		}
 	}
 

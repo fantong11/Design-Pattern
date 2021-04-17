@@ -3,15 +3,14 @@ package org.ntutssl.document;
 import java.util.Iterator;
 
 public class HtmlOutputVisitor implements Visitor<String> {
-	String result = "";
+	private String result;
 
 	public HtmlOutputVisitor() {
-
+		this.result = "";
 	}
 
 	public void visitParagraph(Paragraph paragraph) {
 		result += "<p>" + paragraph.getText() + "</p>\n";
-
 	}
 
 	public void visitTitle(Title title) {
@@ -23,20 +22,12 @@ public class HtmlOutputVisitor implements Visitor<String> {
 		result += "<article topic='" + article.getText() + "'>\n";
 
 		while (it.hasNext()) {
-			Document nextDocument = it.next();
-			HtmlOutputVisitor hov = new HtmlOutputVisitor();
-
-			nextDocument.accept(hov);
-			String documentResult = hov.getResult();
-
-			for (int i = 0; i < (article.getLevel()) * 2; i++) {
-				result += " ";
-			}
-			result += documentResult;
+			for (int i = 0; i < (article.getLevel()) * 2; result += " ", i++)
+				;
+			it.next().accept(this);
 		}
-		for (int i = 0; i < (article.getLevel() - 1) * 2; i++) {
-			result += " ";
-		}
+		for (int i = 0; i < (article.getLevel() - 1) * 2; result += " ", i++)
+			;
 		result += "</article>\n";
 	}
 
