@@ -26,7 +26,6 @@ public class ListVisitor implements Visitor<String> {
 
   public void visitIndividual(Individual individual) {
     this.result += individual.toString(this.level * this.indentCount);
-    this.level++;
   }
 
   public String getResult() {
