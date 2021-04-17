@@ -11,9 +11,11 @@ public class Individual implements Workforce {
   private boolean isInHouse;
 
   public Individual(String name, int salary, LocalDate startDate, boolean isInHouse) {
-    Pattern pattern = Pattern.compile("[\\W\\d]+");
+    Pattern pattern = Pattern.compile("[\\w\\d]+");
+    Pattern pattern2 = Pattern.compile("[\\W\\d]+.*");
     Matcher m = pattern.matcher(name);
-    if (name.isEmpty() || m.matches()){
+    Matcher m2 = pattern2.matcher(name);
+    if (name.isEmpty() || m.matches() || m2.matches()){
       throw new OrganizationException("Wrong name pattern");
     }
     

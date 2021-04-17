@@ -27,8 +27,8 @@ public class IndividualTest {
 
     @Test
     public void test() {
-        Pattern pattern = Pattern.compile("[\\W\\d]+");
-        Matcher m = pattern.matcher("12");
+        Pattern pattern = Pattern.compile("[\\w\\d]+");
+        Matcher m = pattern.matcher("aasfs1234");
         System.out.println(m.matches());
     }
 
