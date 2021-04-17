@@ -20,7 +20,7 @@ public class FindVisitor implements Visitor<List<Workforce>> {
     if (condition.apply(team)) {
       this.result.add(team);
     }
-    
+
     Iterator<Workforce> it = team.iterator();
     while (it.hasNext()) {
       it.next().accept(this);

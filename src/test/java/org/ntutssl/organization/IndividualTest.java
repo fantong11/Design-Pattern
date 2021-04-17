@@ -40,7 +40,12 @@ public class IndividualTest {
     
     @Test
     public void toStringTest() {
-        // assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", team.toString(1));
+        assertEquals(
+            "  Type:       Individual (in-house)\n" +
+            "  Name:       Nick\n" +
+            "  Salary:     24000\n" + 
+            "  Start date: 2021-04-17\n"
+            , individual.toString(2));
     }
 
     @Rule

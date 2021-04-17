@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Team implements Workforce {
+public class Team implements Workforce { 
   private String name;
   private LocalDate startDate;
   private boolean isInHouse;
   private List<Workforce> workforces;
 
   public Team(String name, LocalDate startDate, boolean isInHouse) {
+    if (name.isEmpty()) throw new OrganizationException("Wrong name pattern");
     this.name = name;
     this.startDate = startDate;
     this.isInHouse = isInHouse;

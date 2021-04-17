@@ -90,7 +90,11 @@ public class TeamTest {
 
     @Test
     public void toStringTest() {
-        // assertEquals("Article\t\ttopic: test\n\t\tlevel: 5\n", team.toString(1));
+        assertEquals(
+            "  Type:       Team (in-house)\n" +
+            "  Name:       Nick\n" +
+            "  Start date: 2021-04-17\n"
+            , team.toString(2));
     }
 
     @Test
