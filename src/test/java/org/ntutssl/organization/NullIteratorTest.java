@@ -12,12 +12,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 public class NullIteratorTest {
-    private Team team;
     private Individual individual;
 
     @Before
     public void setUp() {
-        team = new Team("Nick", LocalDate.now(), true);
         individual = new Individual("Danny", 25000, LocalDate.now(), true);
     }
 
