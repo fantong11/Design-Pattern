@@ -66,5 +66,4 @@ public class IndividualTest {
         expectedEx.expectMessage("Invalid action: getSize");
         individual.getSize();
     }
-
 }
