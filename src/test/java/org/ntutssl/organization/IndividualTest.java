@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -21,6 +23,13 @@ public class IndividualTest {
     @Test
     public void getNameTest() {
         assertEquals("Nick", individual.getName());
+    }
+
+    @Test
+    public void test() {
+        Pattern pattern = Pattern.compile("[\\W\\d]+");
+        Matcher m = pattern.matcher("12");
+        System.out.println(m.matches());
     }
 
     @Test

@@ -1,6 +1,8 @@
 package org.ntutssl.organization;
 
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Individual implements Workforce {
   private String name;
@@ -9,9 +11,12 @@ public class Individual implements Workforce {
   private boolean isInHouse;
 
   public Individual(String name, int salary, LocalDate startDate, boolean isInHouse) {
-    if (name.isEmpty() || name.equals("[\\W]+") || name.equals("[\\D]+") || name.equals("")){
+    Pattern pattern = Pattern.compile("[\\W\\d]+");
+    Matcher m = pattern.matcher(name);
+    if (name.isEmpty() || m.matches()){
       throw new OrganizationException("Wrong name pattern");
     }
+    
     if (salary < 24000) throw new OrganizationException("Salary cannot smaller than 24000");
     this.name = name;
     this.salary = salary;
