@@ -21,12 +21,16 @@ public class WordFrequencyManager implements EventListener {
 		return words.size();
 	}
 
+	public String getOutput() {
+		return this.output;
+	}
+
 	public void onEvent(EventType eventType, String event) {
 		switch (eventType) {
 			case COUNT:
 				incrementCount(event);
 				break;
-		
+
 			case EOF:
 				outputWordFequency();
 				break;
@@ -49,12 +53,11 @@ public class WordFrequencyManager implements EventListener {
 			output += word.getKey() + ": " + word.getValue() + "\n";
 		}
 		// words.entrySet()
-		// 	.stream()
-		// 	.sorted(Entry.comparingByKey())
-		// 	.forEachOrdered(word -> output += word.getKey() + ": " + word.getValue() + "\n");
-		System.out.println(output);
+		// .stream()
+		// .sorted(Entry.comparingByKey())
+		// .forEachOrdered(word -> output += word.getKey() + ": " + word.getValue() +
+		// "\n");
 		eventManager.publish(EventType.OUTPUT, output);
 	}
 
-	
 }

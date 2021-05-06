@@ -11,7 +11,7 @@ public class StopWordManager implements EventListener {
 	private List<String> stopWordList;
 
 	public StopWordManager(EventManager eventManager) {
-		this.eventManager = new EventManager();
+		this.eventManager = eventManager;
 		this.stopWordList = new ArrayList<>();
 		this.eventManager.subscribe(EventType.LOAD, this);
 		this.eventManager.subscribe(EventType.VALIDATE, this);
@@ -22,8 +22,6 @@ public class StopWordManager implements EventListener {
 	}
 
 	public void onEvent(EventType eventType, String event) {
-		System.out.println("fsdfsafasd");
-		System.out.println("fsdfsafasd" + event);
 		switch (eventType) {
 			case LOAD:
 				handleInput("input/stop_words.txt", "[\\W_]+");
@@ -49,7 +47,7 @@ public class StopWordManager implements EventListener {
 			throw new WordFrequencyException("File not found.");
 		}
 
-		for (char c = 33; c <= 126; c++) {
+		for (char c = 'a'; c <= 'z'; c++) {
 			stopWordList.add(Character.toString(c));
 		}
 	}

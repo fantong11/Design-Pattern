@@ -74,7 +74,7 @@ public class Output implements EventListener {
 
 		int count = 0;
 		for (String word : result) {
-			if (count > range) break;
+			if (count >= range) break;
 			System.out.println(word);
 			count++;
 		}

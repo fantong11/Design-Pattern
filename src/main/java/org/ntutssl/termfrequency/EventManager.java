@@ -6,10 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class EventManager {
-	private Map<EventType, List<EventListener>> listenerMap;
+	private Map<EventType, List<EventListener>> listenerMap = new HashMap<>();
 
 	public EventManager() {
-		listenerMap = new HashMap<>();
 		listenerMap.put(EventType.START, new ArrayList<>());
 		listenerMap.put(EventType.LOAD, new ArrayList<>());
 		listenerMap.put(EventType.RUN, new ArrayList<>());
