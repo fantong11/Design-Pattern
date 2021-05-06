@@ -24,7 +24,7 @@ public class StopWordManager implements EventListener {
 	public void onEvent(EventType eventType, String event) {
 		switch (eventType) {
 			case LOAD:
-				handleInput("input/stop_words.txt", ", ");
+				handleInput("input/stop_words.txt", ",");
 				break;
 
 			case VALIDATE:
