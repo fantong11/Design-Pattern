@@ -47,7 +47,8 @@ public class StopWordManager implements EventListener {
 			throw new WordFrequencyException("File not found.");
 		}
 
-		for (char c = 'a'; c <= 'x'; c++) {
+		for (char c = 'a'; c <= 'z'; c++) {
+			if (c == 'a' || c == 'i') continue;
 			stopWordList.add(Character.toString(c));
 		}
 	}

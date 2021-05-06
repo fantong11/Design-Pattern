@@ -6,39 +6,25 @@ import org.junit.Test;
 
 public class WordFrequencyManagerTest {
     @Test
-    public void testIncrementCount() {
-        EventManager manager = new EventManager();
-        WordFrequencyManager wfm = new WordFrequencyManager(manager);
+    public void addWordTest() {
+        EventManager eventManager = new EventManager();
+        WordFrequencyManager wordFrequencyManager = new WordFrequencyManager(eventManager);
         
-        wfm.onEvent(EventType.COUNT, "a");
+        wordFrequencyManager.onEvent(EventType.COUNT, "test");
 
-        assertEquals(1, wfm.getNumOfWords());
+        assertEquals(1, wordFrequencyManager.getNumOfWords());
     }
 
     @Test
-    public void testGetNumOfWords() {
-        EventManager manager = new EventManager();
-        WordFrequencyManager wfm = new WordFrequencyManager(manager);
+    public void addSameWordTest() {
+        EventManager eventManager = new EventManager();
+        WordFrequencyManager wordFrequencyManager = new WordFrequencyManager(eventManager);
 
-        manager.publish(EventType.COUNT, "a");
-        manager.publish(EventType.COUNT, "b");
-        manager.publish(EventType.COUNT, "a");
+        eventManager.publish(EventType.COUNT, "design");
+        eventManager.publish(EventType.COUNT, "pattern");
+        eventManager.publish(EventType.COUNT, "design");
+        eventManager.publish(EventType.COUNT, "pattern");
 
-        assertEquals(2, wfm.getNumOfWords());
+        assertEquals(2, wordFrequencyManager.getNumOfWords());
     }
-
-    // @Test
-    // public void testResult() {
-    //     EventManager manager = new EventManager();
-    //     WordFrequencyManager wfm = new WordFrequencyManager(manager);
-
-    //     manager.publish(EventType.COUNT, "design");
-    //     manager.publish(EventType.COUNT, "pattern");
-    //     manager.publish(EventType.COUNT, "design");
-    //     manager.publish(EventType.EOF, "");
-
-    //     String expected = "pattern: 1\ndesign: 2\n";
-
-    //     assertEquals(expected, wfm.getOutput());
-    // }
 }

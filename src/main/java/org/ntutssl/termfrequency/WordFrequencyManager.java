@@ -52,11 +52,6 @@ public class WordFrequencyManager implements EventListener {
 		for (Entry<String, Integer> word : words.entrySet()) {
 			output += word.getKey() + ": " + word.getValue() + "\n";
 		}
-		// words.entrySet()
-		// .stream()
-		// .sorted(Entry.comparingByKey())
-		// .forEachOrdered(word -> output += word.getKey() + ": " + word.getValue() +
-		// "\n");
 		eventManager.publish(EventType.OUTPUT, output);
 	}
 

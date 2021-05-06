@@ -2,52 +2,39 @@ package org.ntutssl.termfrequency;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 public class DataStorageManagerTest {
 
     @Test
     public void testGetWords() {
-        EventManager manager = new EventManager();
-        DataStorageManager dsm = new DataStorageManager(manager);
-        
-        manager.publish(EventType.LOAD, "input/pride-and-prejudice.txt");
-       
-        List<String> words = new ArrayList<>(dsm.getWords());
-       
-        assertTrue(words.contains("mr"));
+        EventManager eventManager = new EventManager();
+        DataStorageManager dataStorageManager = new DataStorageManager(eventManager);
+
+        eventManager.publish(EventType.LOAD, "input/pride-and-prejudice.txt");
+        assertTrue(dataStorageManager.getWords().contains("very"));
     }
 
     @Test
     public void testLoadStopWords() {
-        EventManager manager = new EventManager();
-        DataStorageManager dsm = new DataStorageManager(manager);
-        
-        manager.publish(EventType.LOAD, "input/stop_words.txt");
-       
-        List<String> words = new ArrayList<>(dsm.getWords());
-       
-        assertTrue(words.contains("you"));
+        EventManager eventManager = new EventManager();
+        DataStorageManager dataStorageManager = new DataStorageManager(eventManager);
+
+        eventManager.publish(EventType.LOAD, "input/stop_words.txt");
+        assertTrue(dataStorageManager.getWords().contains("you"));
     }
 
     @Test
-    public void testRun() {
-        EventManager manager = new EventManager();
-        DataStorageManager dsm = new DataStorageManager(manager);
-        StopWordManager swm = new StopWordManager(manager);
-        WordFrequencyManager wfm = new WordFrequencyManager(manager);
+    public void runTest() {
+        EventManager eventManager = new EventManager();
+        DataStorageManager dataStorageManager = new DataStorageManager(eventManager);
+        StopWordManager stopWordManager = new StopWordManager(eventManager);
+        new WordFrequencyManager(eventManager);
         
-        manager.publish(EventType.LOAD, "input/pride-and-prejudice.txt");
-        manager.publish(EventType.RUN, "");
-
-        List<String> words = new ArrayList<>(dsm.getWords());
-        List<String> stopwords = new ArrayList<>(swm.getStopWords());
-
-        assertTrue(words.contains("mr"));
-        assertTrue(stopwords.contains("the"));
+        eventManager.publish(EventType.LOAD, "input/pride-and-prejudice.txt");
+        eventManager.publish(EventType.RUN, "");
+        assertTrue(dataStorageManager.getWords().contains("darcy"));
+        assertTrue(stopWordManager.getStopWords().contains("a"));
 
     }
 }
