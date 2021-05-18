@@ -1,3 +1,4 @@
 package org.ntutssl.document;
 
-public class DocumentParserTest { }
+public class DocumentParserTest {
+}

@@ -1,20 +1,49 @@
 package org.ntutssl.document;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Article implements Document {
-  
-  public Article(String topic, int level) { }
+	private List<Document> documents;
+	private String topic;
+	private int level;
 
-  public String getText() { }
+	public Article(String topic, int level) {
+		this.documents = new ArrayList<>();
+		this.topic = topic;
+		this.level = level;
+	}
 
-  @Override
-  public int getLevel() { }
-  
-  @Override
-  public void add(Document document) { }
+	public String getText() {
+		return this.topic;
+	}
 
-  @Override
-  public Iterator<Document> iterator() { }
+	@Override
+	public int getLevel() {
+		return this.level;
+	}
 
-  @Override
-  public String toString() { }
+
+	@Override
+	public void add(Document document) {
+		if (document.getClass().equals(Article.class)) {
+			if (document.getLevel() <= getLevel())
+				throw new DocumentException("Level must be higher than current article.");
+		}
+		this.documents.add(document);
+	}
+
+
+	@Override
+	public Iterator<Document> iterator() {
+		return documents.iterator();
+	}
+
+
+	@Override
+	public String toString() {
+		return "Article\t\ttopic: " + topic + "\n\t\tlevel: " + level + "\n";
+	}
+
 }

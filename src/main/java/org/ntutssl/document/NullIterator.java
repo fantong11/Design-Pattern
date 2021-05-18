@@ -1,10 +1,19 @@
 package org.ntutssl.document;
 
-public class NullIterator implements Iterator<Document> {
-  
-  @Override
-  public boolean hasNext() { }
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-  @Override
-  public Document next() { }
+public class NullIterator implements Iterator<Document> {
+
+	@Override
+	public boolean hasNext() {
+		return false;
+	}
+
+	@Override
+	public Document next() {
+		throw new NoSuchElementException();
+	}
+
+
 }
