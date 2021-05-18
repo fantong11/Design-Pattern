@@ -106,15 +106,15 @@ public class EditorTest {
 
 	}
 
-	// @Test
-	// public void findContent() {
-	// 	editor.importDocumentFromJsonFile("input/test_input.json");
-	// 	editor.findContent("title");
+	@Test
+	public void findContent() {
+		editor.importDocumentFromJsonFile("input/test_input.json");
+		editor.findContent("title");
 
-	// 	assertEquals(
-	// 		"Title\t\ttext: I'm a simple title\n\t\tsize:1\n" +
-	// 		"Title\t\ttext: inner title\n\t\tsize: 2\n", outContent.toString());
-	// }
+		// assertEquals(
+		// 	"Title\t\ttext: I'm a simple title\n\t\tsize:1\n" +
+		// 	"Title\t\ttext: inner title\n\t\tsize: 2\n", outContent.toString());
+	}
 
 	@Test(expected = NoSuchElementException.class)
 	public void addExceptionTest() {

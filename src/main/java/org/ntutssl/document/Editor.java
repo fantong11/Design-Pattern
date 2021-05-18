@@ -56,9 +56,9 @@ public class Editor {
 		List<Document> result = new ArrayList<>();
 		FindContentConsumer fcc = new FindContentConsumer(result, target);
 		iterator().forEachRemaining(fcc);
-
 		for (Document document : result) {
 			System.out.println(document.toString());
+			System.out.println("\n");
 		}
 	}
 
