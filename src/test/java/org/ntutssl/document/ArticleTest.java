@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import java.util.Iterator;
-import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -86,17 +85,6 @@ public class ArticleTest {
         assertEquals("1234", iterator.next().getText());
         assertEquals("789", iterator.next().getText());
     }
-
-    // @Test
-    // public void addPrimitiveDocumentsInArticleInArticleTest() {
-    //     FindContentVisitor fcv = new FindContentVisitor("test");
-    //     article.add(new Article("test", 7));
-    //     iterator = article.iterator();
-    //     iterator.next().add(new Title("test2", 20));
-    //     article.accept(fcv);
-    //     List<Document> result = fcv.getResult();
-    //     assertEquals("test", result.get(1).getText());
-    // }
 
     @Test
     public void toStringTest() {

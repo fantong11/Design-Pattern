@@ -39,9 +39,6 @@ public class HtmlOutputConsumer implements Consumer<Document> {
 
 			level++;
 			it.forEachRemaining(this);
-			// while (it.hasNext()) {
-			// 	accept(it.next());
-			// }
 			level--;
 
 			result.add(indentCount + "</article>\n");

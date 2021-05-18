@@ -29,13 +29,11 @@ public class Editor {
 			JsonArray jsonArray = gson.fromJson(reader, JsonArray.class);
 			for (JsonElement jsonElement : jsonArray) {
 				JsonObject jsonObject = jsonElement.getAsJsonObject();
-				System.out.println(jsonObject.toString());
 				editor.add(documentParser.parse(jsonObject));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public void exportDocumentAsHtmlFile(String outputPath) {

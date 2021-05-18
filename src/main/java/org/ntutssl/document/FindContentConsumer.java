@@ -27,9 +27,6 @@ public class FindContentConsumer implements Consumer<Document> {
 		if (document instanceof Article) {
 			Iterator<Document> it = document.iterator();
 			it.forEachRemaining(this);
-			// while (it.hasNext()) {
-			// 	accept(it.next());	
-			// }
 		}
 	}
 }
