@@ -11,14 +11,12 @@ public class InstructionHandler {
 		this.editor = editor;
 	}
 
-
 	public void run() {
 		while (true) {
 			printEditorInstructions();
 			handleEditorInstructions(scanner.nextLine());
 		}
 	}
-
 
 	private void printEditorInstructions() {
 		System.out.println("Please enter the following instruction to start editing:");
@@ -31,54 +29,8 @@ public class InstructionHandler {
 		System.out.println("  7. 'exit': to exit the program");
 	}
 
-
-	private void handleEditorInstructions(String instruction) {
-		switch (instruction) {
-		case "add title":
-			Document title = addTitleInstruction();
-			if (title != null) {
-				editor.add(title);
-				System.out.println("Title added to the editor.");
-			}
-			break;
-
-		case "add paragraph":
-			Document paragragh = addParagraphInstruction();
-			editor.add(paragragh);
-			System.out.println("Paragraph added to the editor.");
-			break;
-
-		case "add article":
-			Document article = addArticleInstruction(lastLevel);
-			if (article != null) {
-				editor.add(article);
-				handleArticleInstructions(instruction, (Article) article);
-			}
-			break;
-
-		case "find content":
-			findContentInstruction();
-			break;
-
-		case "import json":
-			importJsonInstruction();
-			break;
-		
-		case "output html":
-			outputHtmlInstruction();
-			break;
-
-		case "exit":
-			scanner.close();
-			System.exit(0);
-			break;
-
-		default:
-			System.out.println("Invalid Instruction");
-			break;
-		}
+	private void handleEditorInstructions(String instruction, CommandManager manager) {
 	}
-
 
 	private Document addTitleInstruction() {
 		System.out.println("Please enter the information of title:");
@@ -93,7 +45,6 @@ public class InstructionHandler {
 		return new Title(text, size);
 	}
 
-
 	private Document addParagraphInstruction() {
 		System.out.println("Please enter the information of paragraph:");
 		System.out.print("Text of paragraph: ");
@@ -102,7 +53,6 @@ public class InstructionHandler {
 		return new Paragraph(text);
 
 	}
-
 
 	private Document addArticleInstruction(int lastLevel) {
 		System.out.println("Please enter the information of article:");
@@ -121,7 +71,6 @@ public class InstructionHandler {
 
 	}
 
-
 	private void printArticleInstructions() {
 		System.out.println("Please enter the following instruction to edit the article:");
 		System.out.println("  1. 'add title': to add a title to the article");
@@ -131,41 +80,7 @@ public class InstructionHandler {
 
 	}
 
-
-	private void handleArticleInstructions(String instruction, Article article) {
-		printArticleInstructions();
-		instruction = scanner.nextLine();
-		Article previousArticle = null;
-
-		switch (instruction) {
-		case "add title":
-			Document title = addTitleInstruction();
-			article.add(title);
-			handleArticleInstructions(instruction, article);
-			break;
-
-		case "add paragraph":
-			Document paragraph = addParagraphInstruction();
-			article.add(paragraph);
-			handleArticleInstructions(instruction, article);
-			break;
-
-		case "add article":
-			previousArticle = article;
-			Document newArticle = addArticleInstruction(lastLevel);
-			article.add(newArticle);
-			handleArticleInstructions(instruction, (Article) newArticle);
-			handleArticleInstructions(instruction, previousArticle);
-			break;
-
-		case "exit":
-			return;
-
-		default:
-			System.out.println("Invalid instruction.");
-			handleArticleInstructions(instruction, article);
-			break;
-		}
+	private void handleArticleInstructions(String instruction, Article article, CommandManager manager) {
 	}
 
 	private void findContentInstruction() {

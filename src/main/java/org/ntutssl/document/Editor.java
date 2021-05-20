@@ -63,6 +63,9 @@ public class Editor {
 		editor.add(document);
 	}
 
+	public void remove(Document document) {
+	}
+
 	public int size() {
 		return editor.size();
 	}
@@ -70,4 +73,5 @@ public class Editor {
 	public Iterator<Document> iterator() {
 		return editor.iterator();
 	}
+
 }

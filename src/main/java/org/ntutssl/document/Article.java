@@ -24,7 +24,6 @@ public class Article implements Document {
 		return this.level;
 	}
 
-
 	@Override
 	public void add(Document document) {
 		if (document.getClass().equals(Article.class)) {
@@ -34,16 +33,17 @@ public class Article implements Document {
 		this.documents.add(document);
 	}
 
+	@Override
+	public void remove(Document document) {
+	}
 
 	@Override
 	public Iterator<Document> iterator() {
 		return documents.iterator();
 	}
 
-
 	@Override
 	public String toString() {
 		return "Article\t\ttopic: " + topic + "\n\t\tlevel: " + level + "\n";
 	}
-
 }

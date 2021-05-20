@@ -25,7 +25,7 @@ class DocumentParser {
 				String size = jObj.get("size").getAsString();
 				documentBuilder.buildTitle(text, Integer.valueOf(size));
 				break;
-		
+
 			case "paragraph":
 				documentBuilder.buildParagraph(text);
 				break;
@@ -48,4 +48,5 @@ class DocumentParser {
 		}
 		return documentBuilder.getResult();
 	}
+
 }

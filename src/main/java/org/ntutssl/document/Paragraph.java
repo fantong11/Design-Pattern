@@ -7,11 +7,9 @@ public class Paragraph implements Document {
 		this.text = text;
 	}
 
-
 	public String getText() {
 		return this.text;
 	}
-
 
 	@Override
 	public String toString() {

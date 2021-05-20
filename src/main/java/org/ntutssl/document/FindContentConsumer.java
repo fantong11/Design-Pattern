@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 public class FindContentConsumer implements Consumer<Document> {
 	private List<Document> result;
 	private String target;
+
 	/**
 	 * @param result you should add the document which contains `target` into here.
 	 */
@@ -29,4 +30,5 @@ public class FindContentConsumer implements Consumer<Document> {
 			it.forEachRemaining(this);
 		}
 	}
+
 }

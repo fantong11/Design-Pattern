@@ -53,4 +53,5 @@ class DocumentBuilder {
 	public Document getResult() {
 		return document;
 	}
+
 }

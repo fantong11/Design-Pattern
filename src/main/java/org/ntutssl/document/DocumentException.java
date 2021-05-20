@@ -6,5 +6,4 @@ public class DocumentException extends RuntimeException {
 	public DocumentException(String errorMessage) {
 		super(errorMessage);
 	}
-
 }

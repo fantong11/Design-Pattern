@@ -1,5 +1,4 @@
 package org.ntutssl.document;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
@@ -45,4 +44,5 @@ public class HtmlOutputConsumer implements Consumer<Document> {
 
 		}
 	}
+
 }

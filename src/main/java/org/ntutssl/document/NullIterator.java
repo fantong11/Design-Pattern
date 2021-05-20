@@ -15,5 +15,4 @@ public class NullIterator implements Iterator<Document> {
 		throw new NoSuchElementException();
 	}
 
-
 }
