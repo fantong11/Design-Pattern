@@ -5,12 +5,10 @@ import java.util.Stack;
 public class CommandManager {
 	private final Stack<Command> commands;
 	private final Stack<Command> historyCommands;
-	private int pointer;
 
 	public CommandManager() {
 		commands = new Stack<>();
 		historyCommands = new Stack<>();
-		pointer = -1;
 	}
 
 	public void executeCmd(Command cmd) {

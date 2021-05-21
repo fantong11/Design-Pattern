@@ -20,6 +20,7 @@ public interface Document {
 	}
 
 	public default void remove(Document document) {
+		throw new DocumentException("Invalid action: remove");
 	}
 
 	public String getText();
