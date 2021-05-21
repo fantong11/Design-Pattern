@@ -14,7 +14,7 @@ public class AddCommandToEditorTest {
     @Before
     public void setup() {
         editor = new Editor();
-        
+
     }
 
     @Test

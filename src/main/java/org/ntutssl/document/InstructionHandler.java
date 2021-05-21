@@ -41,13 +41,13 @@ public class InstructionHandler {
 					System.out.println("Title added to the editor.");
 				}
 				break;
-	
+
 			case "add paragraph":
 				Document paragragh = addParagraphInstruction();
 				manager.executeCmd(new AddCommandToEditor(editor, paragragh));
 				System.out.println("Paragraph added to the editor.");
 				break;
-	
+
 			case "add article":
 				Document article = addArticleInstruction(lastLevel);
 				if (article != null) {
@@ -55,19 +55,19 @@ public class InstructionHandler {
 					handleArticleInstructions(instruction, (Article) article, manager);
 				}
 				break;
-	
+
 			case "find content":
 				findContentInstruction();
 				break;
-	
+
 			case "import json":
 				importJsonInstruction();
 				break;
-			
+
 			case "output html":
 				outputHtmlInstruction();
 				break;
-	
+
 			case "undo":
 				manager.undoCmd();
 				break;
@@ -80,12 +80,12 @@ public class InstructionHandler {
 				scanner.close();
 				System.exit(0);
 				break;
-	
+
 			default:
 				System.out.println("Invalid Instruction");
 				break;
-			}
-	
+		}
+
 	}
 
 	private Document addTitleInstruction() {
@@ -144,41 +144,41 @@ public class InstructionHandler {
 		Article previousArticle = null;
 
 		switch (instruction) {
-		case "add title":
-			Document title = addTitleInstruction();
-			manager.executeCmd(new AddCommandToArticle(article, title));
-			handleArticleInstructions(instruction, article, manager);
-			break;
+			case "add title":
+				Document title = addTitleInstruction();
+				manager.executeCmd(new AddCommandToArticle(article, title));
+				handleArticleInstructions(instruction, article, manager);
+				break;
 
-		case "add paragraph":
-			Document paragraph = addParagraphInstruction();
-			manager.executeCmd(new AddCommandToArticle(article, paragraph));
-			handleArticleInstructions(instruction, article, manager);
-			break;
+			case "add paragraph":
+				Document paragraph = addParagraphInstruction();
+				manager.executeCmd(new AddCommandToArticle(article, paragraph));
+				handleArticleInstructions(instruction, article, manager);
+				break;
 
-		case "add article":
-			previousArticle = article;
-			Document newArticle = addArticleInstruction(lastLevel);
-			manager.executeCmd(new AddCommandToArticle(article, newArticle));
-			handleArticleInstructions(instruction, (Article) newArticle, manager);
-			handleArticleInstructions(instruction, previousArticle, manager);
-			break;
+			case "add article":
+				previousArticle = article;
+				Document newArticle = addArticleInstruction(lastLevel);
+				manager.executeCmd(new AddCommandToArticle(article, newArticle));
+				handleArticleInstructions(instruction, (Article) newArticle, manager);
+				handleArticleInstructions(instruction, previousArticle, manager);
+				break;
 
-		case "undo":
-			manager.undoCmd();
-			break;
+			case "undo":
+				manager.undoCmd();
+				break;
 
-		case "redo":
-			manager.redoCmd();
-			break;
+			case "redo":
+				manager.redoCmd();
+				break;
 
-		case "exit":
-			return;
+			case "exit":
+				return;
 
-		default:
-			System.out.println("Invalid instruction.");
-			handleArticleInstructions(instruction, article, manager);
-			break;
+			default:
+				System.out.println("Invalid instruction.");
+				handleArticleInstructions(instruction, article, manager);
+				break;
 		}
 
 	}

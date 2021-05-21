@@ -27,7 +27,7 @@ public class FindContentConsumerTest {
         title3 = new Title("title3", 4);
         paragraph1 = new Paragraph("paragraph1");
         paragraph2 = new Paragraph("paragraph2");
-        paragraph3 = new Paragraph("paragraph3");        
+        paragraph3 = new Paragraph("paragraph3");
         article1 = new Article("article1", 1);
         article2 = new Article("article2", 2);
         article3 = new Article("article3", 3);

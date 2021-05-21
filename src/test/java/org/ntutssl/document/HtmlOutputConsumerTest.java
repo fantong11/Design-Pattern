@@ -26,12 +26,12 @@ public class HtmlOutputConsumerTest {
         title3 = new Title("title3", 4);
         paragraph1 = new Paragraph("paragraph1");
         paragraph2 = new Paragraph("paragraph2");
-        paragraph3 = new Paragraph("paragraph3");        
+        paragraph3 = new Paragraph("paragraph3");
         article1 = new Article("article1", 1);
         article2 = new Article("article2", 2);
         article3 = new Article("article3", 3);
     }
-    
+
     @Test
     public void titleTest() {
         List<Document> documents = new ArrayList<>();
@@ -83,7 +83,7 @@ public class HtmlOutputConsumerTest {
         documents.add(article1);
 
         documents.iterator().forEachRemaining(hoc);
-        
+
         assertEquals("<article topic='article1'>\n", result.get(0));
         assertEquals("  <h2>title1</h2>\n", result.get(1));
         assertEquals("  <p>paragraph1</p>\n", result.get(2));
@@ -105,7 +105,7 @@ public class HtmlOutputConsumerTest {
         documents.add(article1);
 
         documents.iterator().forEachRemaining(hoc);
-        
+
         assertEquals("<article topic='article1'>\n", result.get(0));
         assertEquals("  <h2>title1</h2>\n", result.get(1));
         assertEquals("  <p>paragraph1</p>\n", result.get(2));

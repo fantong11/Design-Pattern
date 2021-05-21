@@ -18,7 +18,8 @@ public class CommandManager {
 
 	public void undoCmd() {
 		// add instruction後才能undo
-		if (commands.empty()) return;
+		if (commands.empty())
+			return;
 		Command command = commands.pop();
 		historyCommands.push(command);
 		command.undo();
@@ -26,9 +27,10 @@ public class CommandManager {
 
 	public void redoCmd() {
 		// 有undo過才能redo
-		if (historyCommands.empty()) return;
+		if (historyCommands.empty())
+			return;
 		Command command = historyCommands.pop();
 		commands.push(command);
-		command.redo(); 
+		command.redo();
 	}
 }

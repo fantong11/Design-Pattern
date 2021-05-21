@@ -1,7 +1,6 @@
 package org.ntutssl.document;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 import java.util.NoSuchElementException;
 
@@ -15,7 +14,7 @@ public class AddCommandToArticleTest {
     @Before
     public void setup() {
         article = new Article("article1", 1);
-        
+
     }
 
     @Test

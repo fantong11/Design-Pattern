@@ -3,6 +3,7 @@ package org.ntutssl.document;
 public class AddCommandToArticle implements Command {
 	private Article target;
 	private Document document;
+
 	/**
 	 * @param target   the target document
 	 * @param document the document to be added

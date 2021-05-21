@@ -73,7 +73,6 @@ public class DocumentBuilderTest {
         assertEquals("title", it.next().getText());
         assertEquals("paragraph", it.next().getText());
 
-
         Document article2 = it.next();
         Iterator<Document> it2 = article2.iterator();
         assertEquals("article2", article2.getText());
@@ -82,6 +81,7 @@ public class DocumentBuilderTest {
 
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
+
     @Test
     public void buildLargerLevelArticleInSmallerLevelArticleTest() {
         expectedEx.expect(DocumentException.class);
