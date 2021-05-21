@@ -35,6 +35,7 @@ public class Article implements Document {
 
 	@Override
 	public void remove(Document document) {
+		documents.remove(document);
 	}
 
 	@Override

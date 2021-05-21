@@ -64,6 +64,7 @@ public class Editor {
 	}
 
 	public void remove(Document document) {
+		editor.remove(document);
 	}
 
 	public int size() {

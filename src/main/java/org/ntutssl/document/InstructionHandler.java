@@ -12,9 +12,10 @@ public class InstructionHandler {
 	}
 
 	public void run() {
+		CommandManager commandManager = new CommandManager();
 		while (true) {
 			printEditorInstructions();
-			handleEditorInstructions(scanner.nextLine());
+			handleEditorInstructions(scanner.nextLine(), commandManager);
 		}
 	}
 
@@ -26,10 +27,65 @@ public class InstructionHandler {
 		System.out.println("  4. 'find content': to find the specific string in the editor");
 		System.out.println("  5. 'import json': to import Document into editor from json file");
 		System.out.println("  6. 'output html': to transfer the text to html format");
+		System.out.println("  7. 'undo': to undo the previous 'add' instruction in the editor");
+		System.out.println("  8. 'redo': to redo the previous undo instruction in the editor");
 		System.out.println("  7. 'exit': to exit the program");
 	}
 
 	private void handleEditorInstructions(String instruction, CommandManager manager) {
+		switch (instruction) {
+			case "add title":
+				Document title = addTitleInstruction();
+				if (title != null) {
+					manager.executeCmd(new AddCommandToEditor(editor, title));
+					System.out.println("Title added to the editor.");
+				}
+				break;
+	
+			case "add paragraph":
+				Document paragragh = addParagraphInstruction();
+				manager.executeCmd(new AddCommandToEditor(editor, paragragh));
+				System.out.println("Paragraph added to the editor.");
+				break;
+	
+			case "add article":
+				Document article = addArticleInstruction(lastLevel);
+				if (article != null) {
+					manager.executeCmd(new AddCommandToEditor(editor, article));
+					handleArticleInstructions(instruction, (Article) article, manager);
+				}
+				break;
+	
+			case "find content":
+				findContentInstruction();
+				break;
+	
+			case "import json":
+				importJsonInstruction();
+				break;
+			
+			case "output html":
+				outputHtmlInstruction();
+				break;
+	
+			case "undo":
+				manager.undoCmd();
+				break;
+
+			case "redo":
+				manager.redoCmd();
+				break;
+
+			case "exit":
+				scanner.close();
+				System.exit(0);
+				break;
+	
+			default:
+				System.out.println("Invalid Instruction");
+				break;
+			}
+	
 	}
 
 	private Document addTitleInstruction() {
@@ -76,11 +132,55 @@ public class InstructionHandler {
 		System.out.println("  1. 'add title': to add a title to the article");
 		System.out.println("  2. 'add paragraph': to add a paragraph to the article");
 		System.out.println("  3. 'add article': to add an article to the article");
-		System.out.println("  4. 'exit': to exit the process");
+		System.out.println("  4. 'undo': to undo the previous instruction");
+		System.out.println("  5. 'redo': to redo the previous undo instruction");
+		System.out.println("  6. 'exit': to exit the process");
 
 	}
 
 	private void handleArticleInstructions(String instruction, Article article, CommandManager manager) {
+		printArticleInstructions();
+		instruction = scanner.nextLine();
+		Article previousArticle = null;
+
+		switch (instruction) {
+		case "add title":
+			Document title = addTitleInstruction();
+			manager.executeCmd(new AddCommandToArticle(article, title));
+			handleArticleInstructions(instruction, article, manager);
+			break;
+
+		case "add paragraph":
+			Document paragraph = addParagraphInstruction();
+			manager.executeCmd(new AddCommandToArticle(article, paragraph));
+			handleArticleInstructions(instruction, article, manager);
+			break;
+
+		case "add article":
+			previousArticle = article;
+			Document newArticle = addArticleInstruction(lastLevel);
+			manager.executeCmd(new AddCommandToArticle(article, newArticle));
+			handleArticleInstructions(instruction, (Article) newArticle, manager);
+			handleArticleInstructions(instruction, previousArticle, manager);
+			break;
+
+		case "undo":
+			manager.undoCmd();
+			break;
+
+		case "redo":
+			manager.redoCmd();
+			break;
+
+		case "exit":
+			return;
+
+		default:
+			System.out.println("Invalid instruction.");
+			handleArticleInstructions(instruction, article, manager);
+			break;
+		}
+
 	}
 
 	private void findContentInstruction() {
