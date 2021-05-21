@@ -74,4 +74,9 @@ public class ParagraphTest {
         expectedEx.expectMessage("Invalid action: getSize");
         paragraph.getSize();
     }
+
+    @Test(expected = DocumentException.class)
+    public void removeExceptionTest() {
+        paragraph.remove(new Title("title2", 1));
+    }
 }

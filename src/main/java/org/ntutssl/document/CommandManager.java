@@ -23,6 +23,8 @@ public class CommandManager {
 	}
 
 	public void redoCmd() {
+		// 有undo過才能redo
+		if (historyCommands.empty()) return;
 		Command command = historyCommands.pop();
 		commands.push(command);
 		command.redo(); 

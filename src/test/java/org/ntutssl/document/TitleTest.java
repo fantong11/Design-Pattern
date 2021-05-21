@@ -4,6 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.NoSuchElementException;
+
+import javax.naming.TimeLimitExceededException;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -78,5 +82,10 @@ public class TitleTest {
         expectedEx.expect(DocumentException.class);
         expectedEx.expectMessage("Invalid action: add");
         title.add(new Paragraph("paragraph"));
+    }
+
+    @Test(expected = DocumentException.class)
+    public void removeExceptionTest() {
+        title.remove(new Title("title2", 1));
     }
 }

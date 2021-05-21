@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import org.junit.After;
 import org.junit.Before;
@@ -117,5 +118,19 @@ public class ArticleTest {
         expectedEx.expect(DocumentException.class);
         expectedEx.expectMessage("Invalid action: getSize");
         article.getSize();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void removeTest() {
+        Document title = new Title("title", 1);
+        Document paragraph = new Paragraph("paragraph");
+        article.add(title);
+        article.add(paragraph);
+        article.remove(paragraph);
+
+        iterator = article.iterator();
+
+        assertEquals("title", iterator.next().getText());
+        iterator.next();
     }
 }
