@@ -17,6 +17,8 @@ public class CommandManager {
 	}
 
 	public void undoCmd() {
+		// add instruction後才能undo
+		if (commands.empty()) return;
 		Command command = commands.pop();
 		historyCommands.push(command);
 		command.undo();
