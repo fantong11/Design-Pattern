@@ -1,3 +1,10 @@
 package org.ntutssl.shop;
 
-public class GoodsBuilderTest { }
+import org.junit.Test;
+
+public class GoodsBuilderTest {
+    @Test
+    public void buildTest() {
+
+    }
+}
