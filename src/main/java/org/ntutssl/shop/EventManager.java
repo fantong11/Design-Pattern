@@ -35,6 +35,7 @@ public class EventManager {
 		listenerMap.put(EventType.REPLENISH, new ArrayList<>());
 		listenerMap.put(EventType.CHECK_STOCK, new ArrayList<>());
 		listenerMap.put(EventType.PAY, new ArrayList<>());
+		listenerMap.put(EventType.ADD_TO_CART, new ArrayList<>());
 		listenerMap.put(EventType.PURCHASE, new ArrayList<>());
 		listenerMap.put(EventType.LIST_CART, new ArrayList<>());
 		listenerMap.put(EventType.LIST_SHOP, new ArrayList<>());

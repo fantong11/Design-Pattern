@@ -1,6 +1,10 @@
 package org.ntutssl.shop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Shop implements EventListener {
+	private List<Event<Goods>> goodsList = new ArrayList<>();
 
 	public Shop() {
 		EventManager.getInstance().subscribe(EventType.REPLENISH, this);
@@ -41,6 +45,7 @@ public class Shop implements EventListener {
 	 * @param event Event of Goods to replenish
 	 */
 	private void replenish(Event<Goods> event) {
+		goodsList.add(event);
 	}
 
 	/**

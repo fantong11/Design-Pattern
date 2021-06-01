@@ -1,8 +1,10 @@
 package org.ntutssl.shop;
 
+import java.util.List;
+
 public class ShoppingCart implements EventListener {
 	// private EventManager eventManager;
-	
+	private List<Event<Goods>> events;
 
 	public ShoppingCart() {
 		EventManager.getInstance().subscribe(EventType.PAY, this);
@@ -37,6 +39,7 @@ public class ShoppingCart implements EventListener {
 	 * @param goodsEvent the data of this event is the goods to be added
 	 */
 	private void add(Event<Goods> event) {
+		events.add(event);
 	}
 
 	/**
