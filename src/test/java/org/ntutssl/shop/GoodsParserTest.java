@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class GoodsParserTest {
-    private GoodsParser parser = new GoodsParser();
+    
+    private GoodsParser goodsParser = new GoodsParser();
     private JsonObject merchandiseJson;
     private JsonObject collectionJson;
     private GoodsBuilder docBuilder = new GoodsBuilder();
@@ -50,11 +51,18 @@ public class GoodsParserTest {
 
     @Test
     public void merchandiseTest() {
-
+        Goods result = goodsParser.parse(this.merchandiseJson);
+        assertEquals("apple", result.name());
     }
 
     @Test
-    public void test_buildCollection() {
+    public void CollectionTest() {
+        Goods result = goodsParser.parse(this.collectionJson);
+        assertEquals("banana bag", result.name());
+    }
+
+    @Test
+    public void buildCollectionTest() {
         docBuilder.startBuildCollection(1, "a", "apple");
         docBuilder.endBuildCollection();
         Goods doc = docBuilder.getResult();

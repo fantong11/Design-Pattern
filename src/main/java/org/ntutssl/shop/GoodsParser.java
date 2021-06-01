@@ -72,7 +72,7 @@ public class GoodsParser implements EventListener {
 		EventManager.getInstance().publish(new StringEvent(EventType.LIST_SHOP, ""));
 	}
 
-	private Goods parse(JsonObject jsonObj) {
+	public Goods parse(JsonObject jsonObj) {
 		String type = jsonObj.get("type").getAsString();
 		int id = jsonObj.get("id").getAsInt();
 		String name = jsonObj.get("name").getAsString();
