@@ -6,19 +6,30 @@ import java.util.List;
 import java.util.Map;
 
 public class EventManager {
-	private Map<EventType, List<EventListener>> listenerMap = new HashMap<>();
+
+	private Map<EventType, List<EventListener>> bulletin = new HashMap<>();
 
 	public void subscribe(EventType eventType, EventListener listener) {
-		listenerMap.get(eventType).add(listener);
+		if (bulletin.containsKey(eventType)) {
+			List<EventListener> listeners = bulletin.get(eventType);
+			listeners.add(listener);
+			bulletin.put(eventType, listeners);
+		} else {
+			List<EventListener> listeners = new ArrayList<>();
+			listeners.add(listener);
+			bulletin.put(eventType, listeners);
+		}
 	}
 
 	public <T> void publish(Event<T> event) {
-		for (EventListener listener : listenerMap.get(event.type())) {
+		// if (bulletin.get(event.type()) == null) return;
+		for (EventListener listener : bulletin.get(event.type())) {
+			// System.out.println(event.type().toString());
 			listener.onEvent(event);
 		}
-
 	}
 
+	// SINGLETON
 	// SINGLETON implementation below
 	private static EventManager instance;
 
@@ -30,14 +41,10 @@ public class EventManager {
 	}
 
 	private EventManager() {
-		listenerMap.put(EventType.IMPORT_SHOPPING_LIST, new ArrayList<>());
-		listenerMap.put(EventType.IMPORT_REPLENISH_LIST, new ArrayList<>());
-		listenerMap.put(EventType.REPLENISH, new ArrayList<>());
-		listenerMap.put(EventType.CHECK_STOCK, new ArrayList<>());
-		listenerMap.put(EventType.PAY, new ArrayList<>());
-		listenerMap.put(EventType.ADD_TO_CART, new ArrayList<>());
-		listenerMap.put(EventType.PURCHASE, new ArrayList<>());
-		listenerMap.put(EventType.LIST_CART, new ArrayList<>());
-		listenerMap.put(EventType.LIST_SHOP, new ArrayList<>());
+		this.reset();
+	}
+
+	public void reset() {
+		instance = null;
 	}
 }

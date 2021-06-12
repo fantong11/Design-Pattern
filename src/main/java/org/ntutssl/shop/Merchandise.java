@@ -6,7 +6,7 @@ public class Merchandise implements Goods {
 	private String name;
 	private String desc;
 	private double price;
-
+	
 	/**
 	 * constructor
 	 * 

@@ -5,14 +5,13 @@ import java.util.NoSuchElementException;
 
 public class NullIterator implements Iterator<Goods> {
 
-  @Override
-  public Goods next() {
-    throw new NoSuchElementException();
-  }
+	@Override
+	public Goods next() {
+		throw new NoSuchElementException();
+	}
 
-  @Override
-  public boolean hasNext() {
-    return false;
-  }
-
+	@Override
+	public boolean hasNext() {
+		return false;
+	}
 }

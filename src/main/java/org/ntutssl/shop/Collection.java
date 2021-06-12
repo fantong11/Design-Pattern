@@ -29,7 +29,7 @@ public class Collection implements Goods {
 	}
 
 	public double price() {
-		int price = 0;
+		double price = 0;
 		for (Goods goods : goodses) {
 			price += goods.price();
 		}

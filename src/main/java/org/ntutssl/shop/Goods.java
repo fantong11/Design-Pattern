@@ -12,7 +12,7 @@ public interface Goods {
 	public String description();
 
 	public default void add(Goods goods) {
-		throw new ShopException("Invalid action: add");
+		throw new ShopException("invalid operation.");
 	}
 
 	public default Iterator<Goods> iterator() {
