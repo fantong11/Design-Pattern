@@ -42,9 +42,7 @@ public class GoodsParser implements EventListener {
 			JsonArray jsonArray = gson.fromJson(reader, JsonArray.class);
 			for (JsonElement jsonElement : jsonArray) {
 				JsonObject jsonObject = jsonElement.getAsJsonObject();
-				if (count != 0) {
-					EventManager.getInstance().publish(new GoodsEvent(EventType.CHECK_STOCK, parse(jsonObject), count));
-				}
+				EventManager.getInstance().publish(new GoodsEvent(EventType.CHECK_STOCK, parse(jsonObject), count));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
