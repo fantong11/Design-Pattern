@@ -28,7 +28,7 @@ public class ShoppingCartTest {
     @Test
     public void addGoodsEventTest() {
         shoppingCart.onEvent(new GoodsEvent(EventType.ADD_TO_CART, new Collection(1, "collection", "desc"), 1));
-        shoppingCart.onEvent(new GoodsEvent(EventType.ADD_TO_CART, new Merchandise(1, "merchandise", "desc", 100), 1));
+        shoppingCart.onEvent(new GoodsEvent(EventType.ADD_TO_CART, new Merchandise(2, "merchandise", "desc", 100), 1));
         shoppingCart.onEvent(new StringEvent(EventType.LIST_CART, ""));
 
         String testOutput = ""; 
@@ -36,7 +36,7 @@ public class ShoppingCartTest {
         testOutput += "ID  name                  description                             price   count \n";
         testOutput += "--------------------------------------------------------------------------------\n";
         testOutput += "1   collection            desc                                    0.0     1     \n";
-        testOutput += "1   merchandise           desc                                    100.0   1     \n";
+        testOutput += "2   merchandise           desc                                    100.0   1     \n";
         testOutput += "================================================================================\n";
         assertEquals(testOutput, outContent.toString());
     }

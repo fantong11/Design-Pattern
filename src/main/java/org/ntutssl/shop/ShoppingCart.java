@@ -44,6 +44,13 @@ public class ShoppingCart implements EventListener {
 	 * @param goodsEvent the data of this event is the goods to be added
 	 */
 	private void add(Event<Goods> event) {
+		for (Entry<Goods, Integer> goods : shoppingCart.entrySet()) {
+			if (goods.getKey().id() == event.data().id() && goods.getKey().name() == event.data().name()
+					&& goods.getKey().description() == event.data().description()) {
+				shoppingCart.put(event.data(), goods.getValue() + 1);
+				return;
+			}
+		}
 		shoppingCart.put(event.data(), event.count());
 	}
 
@@ -71,7 +78,8 @@ public class ShoppingCart implements EventListener {
 		for (Entry<Goods, Integer> goods : shoppingCart.entrySet()) {
 			EventManager.getInstance().publish(new GoodsEvent(EventType.PURCHASE, goods.getKey(), goods.getValue()));
 
-			System.out.printf("%-40s%-10s%-10s\n", goods.getKey().name(), "$" + goods.getKey().price(), goods.getValue());
+			System.out.printf("%-40s%-10s%-10s\n", goods.getKey().name(), "$" + goods.getKey().price(),
+					goods.getValue());
 		}
 
 		System.out.print("--------------------------------------------------------------------------------\n");
