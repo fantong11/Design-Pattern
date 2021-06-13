@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire6857001486999595219\surefirebooter17901868537139071685.jar C:\Users\Fantong\AppData\Local\Temp\surefire6857001486999595219 2021-06-13T17-35-27_533-jvmRun1 surefire99786951661185332tmp surefire_014028285537666020726tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire1117364348066293620\surefirebooter7774910537245611969.jar C:\Users\Fantong\AppData\Local\Temp\surefire1117364348066293620 2021-06-13T17-43-08_621-jvmRun1 surefire11395429942812589253tmp surefire_09368570634110233717tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Fantong\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire6857001486999595219\surefirebooter17901868537139071685.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire1117364348066293620\surefirebooter7774910537245611969.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="java.runtime.version" value="15.0.2+7"/>

@@ -70,19 +70,24 @@ public class Shop implements EventListener {
 	 * @param event Event of Goods to be deducted
 	 */
 	private void purchase(Event<Goods> event) {
+		boolean isExist = false;
+
 		for (Goods goods : stocks) {
 			if (stocksIdCount.containsKey(goods.id()) && goods.name().equals(event.data().name())) {
-				if (!stocksIdCount.containsKey(event.data().id())) {
-					System.out.print("The store doesn't have this goods.\n");
-					break;
+				if (stocksIdCount.get(goods.id()) >= event.count()) {
+					stocksIdCount.put(goods.id(), stocksIdCount.get(goods.id()) - event.count());
+					isExist = true;
+
+				} else {
+					System.out.print("out of stock. goods ID: " + event.data().id() + "\n");
+					isExist = true;
 				}
-				if (stocksIdCount.get(event.data().id()) < event.count()) {
-					System.out.println("out of stock. goods ID: " + event.data().id());
-					break;
-				}
-				stocksIdCount.put(goods.id(), stocksIdCount.get(goods.id()) - event.count());
 			}
 
+		}
+
+		if (!isExist) {
+			System.out.print("The store doesn't have this goods.\n");
 		}
 	}
 
