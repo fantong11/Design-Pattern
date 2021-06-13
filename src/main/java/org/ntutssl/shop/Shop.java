@@ -62,7 +62,6 @@ public class Shop implements EventListener {
 		if (stocksIdCount.get(event.data().id()) < event.count()) {
 			System.out.println("out of stock. goods ID: " + event.data().id());
 			return;
-
 		}
 		EventManager.getInstance().publish(new GoodsEvent(EventType.ADD_TO_CART, event.data(), event.count()));
 	}

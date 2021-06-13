@@ -22,7 +22,7 @@ public class EventManager {
 	}
 
 	public <T> void publish(Event<T> event) {
-		// if (bulletin.get(event.type()) == null) return;
+		if (bulletin.get(event.type()) == null) return;
 		for (EventListener listener : bulletin.get(event.type())) {
 			listener.onEvent(event);
 		}
@@ -48,6 +48,6 @@ public class EventManager {
 	}
 
 	public void reset() {
-		instance = null;
+		bulletin.clear();
 	}
 }
