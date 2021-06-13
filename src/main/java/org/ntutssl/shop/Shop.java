@@ -85,7 +85,7 @@ public class Shop implements EventListener {
 	 */
 	private void listShop() {
 		if (stocksIdCount.isEmpty()) {
-			System.out.print("This shop does not sell anything\n");
+			System.out.print("This shop does not sell anything.\n");
 			return;
 		}
 		System.out.print("================================================================================\n");

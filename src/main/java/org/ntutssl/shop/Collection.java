@@ -19,6 +19,7 @@ public class Collection implements Goods {
 	 * @param desc
 	 */
 	public Collection(int id, String name, String desc) {
+		if (id < 1) throw new ShopException("ID should be positive.");
 		this.id = id;
 		this.name = name;
 		this.desc = desc;

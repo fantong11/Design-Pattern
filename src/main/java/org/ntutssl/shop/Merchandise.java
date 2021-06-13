@@ -16,6 +16,8 @@ public class Merchandise implements Goods {
 	 * @param price goods price which should not be negative
 	 */
 	public Merchandise(int id, String name, String desc, double price) {
+		if (id < 1) throw new ShopException("ID should be positive.");
+		if (price < 0) throw new ShopException("Price should be positive.");
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
