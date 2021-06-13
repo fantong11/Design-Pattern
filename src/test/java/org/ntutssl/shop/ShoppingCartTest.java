@@ -44,6 +44,6 @@ public class ShoppingCartTest {
     @Test
     public void emptyShoppingCartTest() {
         shoppingCart.onEvent(new StringEvent(EventType.LIST_CART, ""));
-        assertEquals("Your shopping cart is empty.\n", outContent.toString());
+        assertEquals("Your shopping cart is empty\n", outContent.toString());
     }
 }

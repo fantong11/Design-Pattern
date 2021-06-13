@@ -10,6 +10,7 @@ public class FixedDiscountDecorator extends Decorator {
 	 */
 	public FixedDiscountDecorator(Goods goods, double discount) {
 		super(goods);
+		if (discount > goods.price()) throw new ShopException("errorMessage");
 		this.discount = discount;
 	}
 
@@ -18,7 +19,7 @@ public class FixedDiscountDecorator extends Decorator {
 	}
 
 	public double price() {
-		return goods.price();
+		return goods.price() - discount;
 	}
 
 	public String name() {

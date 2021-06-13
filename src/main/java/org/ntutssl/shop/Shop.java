@@ -1,10 +1,13 @@
 package org.ntutssl.shop;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Shop implements EventListener {
-	private List<Event<Goods>> stocks = new ArrayList<>();
+	private Map<Integer, Integer> stocksIdCount = new HashMap<>();
+	private List<Goods> stocks = new ArrayList<>();
 
 	public Shop() {
 		EventManager.getInstance().subscribe(EventType.REPLENISH, this);
@@ -42,7 +45,8 @@ public class Shop implements EventListener {
 	 * @param event Event of Goods to replenish
 	 */
 	private void replenish(Event<Goods> event) {
-		stocks.add(event);
+		stocksIdCount.put(event.data().id(), event.count());
+		stocks.add(event.data());
 	}
 
 	/**
@@ -51,11 +55,15 @@ public class Shop implements EventListener {
 	 * @param event Event of Goods to check
 	 */
 	private void checkStock(Event<Goods> event) {
-		for (Event<Goods> replenishedGoods : stocks) {
-			if (replenishedGoods.data().name().equals(event.data().name())) {
-				EventManager.getInstance().publish(new GoodsEvent(EventType.ADD_TO_CART, event.data(), event.count()));
-			}
+		if (!stocksIdCount.containsKey(event.data().id())) {
+			System.out.print("The store doesn't have this goods.\n");
+			return;
 		}
+		if (stocksIdCount.get(event.data().id()) < event.count()) {
+			System.out.println("out of stock. goods ID: " + event.data().id());
+			return;
+		}
+		EventManager.getInstance().publish(new GoodsEvent(EventType.ADD_TO_CART, event.data(), event.count()));
 	}
 
 	/**
@@ -64,23 +72,33 @@ public class Shop implements EventListener {
 	 * @param event Event of Goods to be deducted
 	 */
 	private void purchase(Event<Goods> event) {
+		for (Goods goods : stocks) {
+			if (stocksIdCount.containsKey(goods.id()) && goods.name().equals(event.data().name())) {
+				stocksIdCount.put(goods.id(), stocksIdCount.get(goods.id()) - event.count());
+			}
+
+		}
 	}
 
 	/**
 	 * show stocks of this shop
 	 */
 	private void listShop() {
-		if (stocks.size() == 0)  {
-			System.out.print("Your shopping cart is empty.\n");
+		if (stocksIdCount.isEmpty()) {
+			System.out.print("This shop does not sell anything\n");
 			return;
 		}
 		System.out.print("================================================================================\n");
 		System.out.printf("%-4s%-22s%-40s%-8s%-6s\n", "ID", "name", "description", "price", "count");
 		System.out.print("--------------------------------------------------------------------------------\n");
-		for (Event<Goods> goods : stocks) {
-			System.out.printf("%-4s%-22s%-40s%-8s%-6s\n", String.valueOf(goods.data().id()), goods.data().name(),
-					goods.data().description(), String.valueOf(goods.data().price()),
-					String.valueOf(goods.count()));
+		for (Goods goods : stocks) {
+			if (stocksIdCount.containsKey(goods.id())) {
+				System.out.printf("%-4s%-22s%-40s%-8s%-6s\n", String.valueOf(goods.id()), goods.name(),
+						goods.description(), String.valueOf(goods.price()),
+						String.valueOf(stocksIdCount.get(goods.id())));
+
+			}
+
 		}
 		System.out.print("================================================================================\n");
 	}

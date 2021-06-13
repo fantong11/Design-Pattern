@@ -11,6 +11,7 @@ public class RateDiscountDecorator extends Decorator {
 	 */
 	public RateDiscountDecorator(Goods goods, double rate) {
 		super(goods);
+		if (rate < 0 || rate >= 1) throw new ShopException("error");
 		this.rate = rate;
 	}
 
@@ -19,7 +20,7 @@ public class RateDiscountDecorator extends Decorator {
 	}
 
 	public double price() {
-		return goods.price();
+		return goods.price() * rate;
 	}
 
 	public String name() {

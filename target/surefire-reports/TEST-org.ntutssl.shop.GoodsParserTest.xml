@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.shop.GoodsParserTest" time="0.047" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.ntutssl.shop.GoodsParserTest" time="0.032" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TW"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\AdoptOpenJDK\jdk-15.0.2.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire5163628579212689859\surefirebooter11120065074482010239.jar C:\Users\Fantong\AppData\Local\Temp\surefire5163628579212689859 2021-06-12T17-50-59_766-jvmRun1 surefire1103764227331199817tmp surefire_014392529812081077621tmp"/>
+    <property name="sun.java.command" value="C:\Users\Fantong\AppData\Local\Temp\surefire2480997306177903120\surefirebooter10934953313325720112.jar C:\Users\Fantong\AppData\Local\Temp\surefire2480997306177903120 2021-06-13T14-53-01_655-jvmRun1 surefire15624064398299456752tmp surefire_011285862419101771943tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\test-classes;C:\Users\Fantong\Desktop\dp2021s\dp2021s_107590051_hw\target\classes;C:\Users\Fantong\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Fantong\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\Fantong\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Fantong\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire5163628579212689859\surefirebooter11120065074482010239.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Fantong\AppData\Local\Temp\surefire2480997306177903120\surefirebooter10934953313325720112.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="java.runtime.version" value="15.0.2+7"/>
@@ -55,8 +55,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="importShoppingCartListTest" classname="org.ntutssl.shop.GoodsParserTest" time="0.04"/>
-  <testcase name="CollectionTest" classname="org.ntutssl.shop.GoodsParserTest" time="0"/>
+  <testcase name="importShoppingCartListTest" classname="org.ntutssl.shop.GoodsParserTest" time="0.025"/>
+  <testcase name="CollectionTest" classname="org.ntutssl.shop.GoodsParserTest" time="0.001"/>
   <testcase name="importReplenishmentListTest" classname="org.ntutssl.shop.GoodsParserTest" time="0.004"/>
   <testcase name="merchandiseTest" classname="org.ntutssl.shop.GoodsParserTest" time="0"/>
 </testsuite>

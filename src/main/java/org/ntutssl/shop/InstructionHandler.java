@@ -7,7 +7,7 @@ public class InstructionHandler {
 	public static Scanner scanner = new Scanner(System.in);
 
 	public InstructionHandler() {
-		
+
 	}
 
 	public void run() {
@@ -50,6 +50,7 @@ public class InstructionHandler {
 				break;
 
 			default:
+				System.out.println("invalid instruction\n");
 				break;
 		}
 	}
@@ -60,6 +61,7 @@ public class InstructionHandler {
 
 	private void instructionImportShoppingList() {
 		EventManager.getInstance().publish(new StringEvent(EventType.IMPORT_SHOPPING_LIST, "input/shopping_list.json"));
+		System.out.print("import successfully\n");
 	}
 
 	private void instructionListShoppingCart() {
@@ -67,6 +69,27 @@ public class InstructionHandler {
 	}
 
 	private void instructionPay() {
-		EventManager.getInstance().publish(new StringEvent(EventType.PAY, ""));
+		System.out.print("Please, select a payment method by number:\n");
+		System.out.print("  1. Bank Transfer\n");
+		System.out.print("  2. Credit Card\n");
+		System.out.print(">");
+
+		String instruction = scanner.nextLine();
+
+		switch (instruction) {
+			case "1":
+				new PayByBankTransferStrategy();
+				EventManager.getInstance().publish(new StringEvent(EventType.PAY, ""));
+				break;
+
+			case "2":
+				new PayByCreditCardStrategy();
+				EventManager.getInstance().publish(new StringEvent(EventType.PAY, ""));
+				break;
+
+			default:
+				System.out.print("invalid option\n");
+				break;
+		}
 	}
 }
