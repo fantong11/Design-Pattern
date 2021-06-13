@@ -57,11 +57,9 @@ public class Shop implements EventListener {
 	private void checkStock(Event<Goods> event) {
 		if (!stocksIdCount.containsKey(event.data().id())) {
 			System.out.print("The store doesn't have this goods.\n");
-			return;
 		}
 		if (stocksIdCount.get(event.data().id()) < event.count()) {
 			System.out.println("out of stock. goods ID: " + event.data().id());
-			return;
 		}
 		EventManager.getInstance().publish(new GoodsEvent(EventType.ADD_TO_CART, event.data(), event.count()));
 	}
@@ -74,6 +72,14 @@ public class Shop implements EventListener {
 	private void purchase(Event<Goods> event) {
 		for (Goods goods : stocks) {
 			if (stocksIdCount.containsKey(goods.id()) && goods.name().equals(event.data().name())) {
+				if (!stocksIdCount.containsKey(event.data().id())) {
+					System.out.print("The store doesn't have this goods.\n");
+					break;
+				}
+				if (stocksIdCount.get(event.data().id()) < event.count()) {
+					System.out.println("out of stock. goods ID: " + event.data().id());
+					break;
+				}
 				stocksIdCount.put(goods.id(), stocksIdCount.get(goods.id()) - event.count());
 			}
 
