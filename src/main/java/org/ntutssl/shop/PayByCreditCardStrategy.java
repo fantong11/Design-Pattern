@@ -31,8 +31,8 @@ public class PayByCreditCardStrategy implements PayStrategy, EventListener {
 		System.out.print("Enter the CVV code:");
 		String CVV = scanner.nextLine();
 
-		if (!cardNumber.matches("[0-9]{16}") || !date.matches("0[1-9]|1[0-2]/\\d{2}")
-				|| !CVV.matches("\\d{3}")) {
+		if (!(cardNumber.matches("\\d{16}") && date.matches("0[1-9]|1[0-2]/\\d{2}")
+				&& CVV.matches("\\d{3}"))) {
 			System.out.print("Pay failed.\n");
 			return;
 		}
