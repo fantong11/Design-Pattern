@@ -24,27 +24,30 @@ public class EventManager {
 	public <T> void publish(Event<T> event) {
 		// if (bulletin.get(event.type()) == null) return;
 		for (EventListener listener : bulletin.get(event.type())) {
-			// System.out.println(event.type().toString());
 			listener.onEvent(event);
 		}
 	}
 
 	// SINGLETON
 	// SINGLETON implementation below
-	private static EventManager instance;
+	private static EventManager instance = null;
 
 	public static EventManager getInstance() {
 		if (instance == null) {
-			instance = new EventManager();
+			synchronized (EventManager.class) {
+				if (instance == null) {
+					instance = new EventManager();
+				}
+			}
 		}
 		return instance;
 	}
 
 	private EventManager() {
-		this.reset();
+
 	}
 
 	public void reset() {
-		// instance = null;
+		instance = null;
 	}
 }
