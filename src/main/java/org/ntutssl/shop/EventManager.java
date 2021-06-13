@@ -45,6 +45,6 @@ public class EventManager {
 	}
 
 	public void reset() {
-		instance = null;
+		// instance = null;
 	}
 }
