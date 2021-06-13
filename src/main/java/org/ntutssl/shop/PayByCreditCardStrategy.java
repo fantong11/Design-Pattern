@@ -22,26 +22,24 @@ public class PayByCreditCardStrategy implements PayStrategy, EventListener {
 	@Override
 	public void calculate(double totalPrice) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter the card number:");
+		System.out.print("Enter the card number: ");
 		String cardNumber = scanner.nextLine();
 
-		System.out.print("Eneter the card expiration date 'mm/yy':");
+		System.out.print("Eneter the card expiration date 'mm/yy': ");
 		String date = scanner.nextLine();
 
 		System.out.print("Enter the CVV code:");
 		String CVV = scanner.nextLine();
 
-		if (!cardNumber.matches("[0-9]{16}") ||
-		!date.matches("0[1-9]|1[0-2]/0[1-9]|[1-9][0-9]")
-		|| !CVV.matches("[0-9]{3}")) {
-		System.out.print("Pay failed.\n");
-		return;
+		if (!cardNumber.matches("[0-9]{16}") || !date.matches("0[1-9]|1[0-2]/\\d{2}")
+				|| !CVV.matches("\\d{3}")) {
+			System.out.print("Pay failed.\n");
+			return;
 		}
 
 		DecimalFormat format = new DecimalFormat("###.00");
-		String resultPrice = "$" + format.format(totalPrice - (totalPrice * 0.1));
-		EventManager.getInstance().publish(new StringEvent(EventType.PRINT_RECEIPT,
-		resultPrice));
+		String resultPrice = "$" + format.format((totalPrice - (totalPrice * 0.1)));
+		EventManager.getInstance().publish(new StringEvent(EventType.PRINT_RECEIPT, resultPrice));
 		System.out.println("Pay successfully!");
 
 		// Scanner scanner = new Scanner(System.in);
