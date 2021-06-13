@@ -47,7 +47,7 @@ public class ShopTest {
     @Test
     public void emptyShopTest() {
         shop.onEvent(new StringEvent(EventType.LIST_SHOP, ""));
-        assertEquals("This shop does not sell anything\n", outContent.toString());
+        assertEquals("This shop does not sell anything.\n", outContent.toString());
     }
 
     @Test
