@@ -5,10 +5,15 @@ import static org.junit.Assert.assertEquals;
 import java.util.Iterator;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class CollectionTest {
     private Goods collection;
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @Before
     public void init() {
@@ -125,5 +130,11 @@ public class CollectionTest {
     public void calPriceWithSigleCollectionTest() {
         collection.add(new Collection(1, "innerCollection1", "desc1"));
         assertEquals(0, collection.price(), 0.1);
+    }
+
+    @Test
+    public void invalidIdTest() {
+        exception.expect(ShopException.class);
+        new Collection(-5, "collection", "desc");
     }
 }

@@ -25,6 +25,7 @@ public class ShopTest {
 
     @After
     public void reset() {
+        EventManager.getInstance().reset();
         System.setOut(originalOut);
     }
 

@@ -92,25 +92,25 @@ public class GoodsParserTest {
         assertEquals(testOutput, outContent.toString());
     }
 
-    // @Test
-    // public void importShoppingCartListTest() {
-    //     goodsParser.onEvent(new StringEvent(EventType.IMPORT_REPLENISH_LIST, "input/replenish_list.json"));
-    //     goodsParser.onEvent(new StringEvent(EventType.IMPORT_SHOPPING_LIST, "input/shopping_list.json"));
-    //     shoppingCart.onEvent(new StringEvent(EventType.LIST_CART, ""));
+    @Test
+    public void importShoppingCartListTest() {
+        goodsParser.onEvent(new StringEvent(EventType.IMPORT_REPLENISH_LIST, "input/replenish_list.json"));
+        goodsParser.onEvent(new StringEvent(EventType.IMPORT_SHOPPING_LIST, "input/shopping_list.json"));
+        shoppingCart.onEvent(new StringEvent(EventType.LIST_CART, ""));
 
-    //     String testOutput = ""; 
-    //     testOutput += "================================================================================\n";
-    //     testOutput += "ID  name                  description                             price   count \n";
-    //     testOutput += "--------------------------------------------------------------------------------\n";
-    //     testOutput += "1   apple                 good apple                              0.49    3     \n";
-    //     testOutput += "2   banana bag            a bag of banana                         0.29    1     \n";
-    //     testOutput += "3   cat                   cute cat                                0.49    2     \n";
-    //     testOutput += "4   dog                   a bag of Chihuahuas                     0.0     2     \n";
-    //     testOutput += "5   egg                   cheap!                                  0.05    4     \n";
-    //     testOutput += "6   fruit                 cdesc                                   6.48    1     \n";
-    //     testOutput += "================================================================================\n";
-    //     assertEquals(testOutput, outContent.toString());
-    // }
+        String testOutput = ""; 
+        testOutput += "================================================================================\n";
+        testOutput += "ID  name                  description                             price   count \n";
+        testOutput += "--------------------------------------------------------------------------------\n";
+        testOutput += "1   apple                 good apple                              0.49    3     \n";
+        testOutput += "2   banana bag            a bag of banana                         0.29    1     \n";
+        testOutput += "3   cat                   cute cat                                0.49    2     \n";
+        testOutput += "4   dog                   a bag of Chihuahuas                     0.0     2     \n";
+        testOutput += "5   egg                   cheap!                                  0.05    4     \n";
+        testOutput += "6   fruit                 cdesc                                   6.48    1     \n";
+        testOutput += "================================================================================\n";
+        assertEquals(testOutput, outContent.toString());
+    }
 
     @Test
     public void merchandiseTest() {

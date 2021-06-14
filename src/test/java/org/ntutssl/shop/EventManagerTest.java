@@ -41,4 +41,27 @@ public class EventManagerTest {
         EventManager anotherEventManager = EventManager.getInstance();
         assertEquals(anotherEventManager, eventManager);
     }
+
+    @Test
+    public void bulletinClearTest() {
+        class TestListener implements EventListener {
+            public boolean triggered = false;
+
+            @Override
+            public void onEvent(Event event) {
+                triggered = event.type() == EventType.LIST_SHOP;
+            }
+            
+        }
+
+        TestListener test = new TestListener();
+
+        eventManager.subscribe(EventType.LIST_SHOP, test);
+        assertFalse(test.triggered);
+
+        eventManager.reset();
+        
+        eventManager.publish(new StringEvent(EventType.LIST_SHOP, "test"));
+        assertFalse(test.triggered);
+    }
 }

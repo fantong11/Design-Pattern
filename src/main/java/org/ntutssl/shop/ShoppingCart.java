@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class ShoppingCart implements EventListener {
-	// private List<Event<Goods>> events;
 	private Map<Goods, Integer> shoppingCart = new LinkedHashMap<>();
 
 	public ShoppingCart() {

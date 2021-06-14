@@ -53,4 +53,17 @@ public class MerchandiseTest {
         exception.expect(NoSuchElementException.class);
         merchandise.iterator().next();
     }
+
+    @Test
+    public void invalidIdTest() {
+        exception.expect(ShopException.class);
+        new Merchandise(-5, "Merchandise", "desc", 100);
+    }
+
+    @Test
+    public void invalidPriceTest() {
+        exception.expect(ShopException.class);
+        new Merchandise(5, "Merchandise", "desc", -100);
+    }
 }
+
